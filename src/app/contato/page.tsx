@@ -16,10 +16,10 @@ export default function ContactPage() {
         title="Vamos conversar?"
         lede="Conte a cidade, o tipo de empresa e o que você precisa. A mensagem abre no WhatsApp da equipe, pronta para enviar."
       />
-      <section className="mx-auto grid max-w-[72rem] gap-8 px-5 py-16 lg:grid-cols-[0.8fr_1.2fr]">
-        <div className="border border-ink bg-ink p-6 text-cream">
-          <p className="text-sm text-cream/60">Florianópolis</p>
-          <p className="mt-3 text-2xl font-semibold leading-tight tracking-[-0.03em]">
+      <section className="mx-auto grid max-w-6xl gap-8 px-5 py-16 lg:grid-cols-[0.8fr_1.2fr]">
+        <div className="rounded-3xl bg-ink p-6 text-cream">
+          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-amber">Florianópolis</p>
+          <p className="mt-3 font-display text-3xl leading-tight">
             {SITE.address.line1}
             <br />
             {SITE.address.line2}
@@ -27,11 +27,11 @@ export default function ContactPage() {
           <a className="mt-5 block text-cream underline" href={`mailto:${SITE.email}`}>
             {SITE.email}
           </a>
-          <a className="mt-3 inline-flex bg-orange px-4 py-2 text-sm font-semibold" href={WHATSAPP_URL}>
+          <a className="mt-3 inline-flex rounded-full bg-orange px-4 py-2 text-sm font-semibold" href={WHATSAPP_URL}>
             WhatsApp {SITE.phoneDisplay}
           </a>
         </div>
-        <div className="border border-line bg-cream p-6 text-ink">
+        <div className="rounded-3xl border border-line bg-cream p-6 text-ink">
           <ContactForm variant="full" idPrefix="contato" />
         </div>
       </section>

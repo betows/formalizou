@@ -17,19 +17,19 @@ export default function ExtrasPage() {
         title="Serviços sob medida, com preço na mesa."
         lede="O que não entra na mensalidade fica aqui, com o valor de cada pedido. Alguns itens, como alteração contratual e baixa, podem ser contratados sem plano. Serviços recorrentes pedem um plano ativo."
       />
-      <section className="mx-auto max-w-[72rem] px-5 py-16">
+      <section className="mx-auto max-w-6xl px-5 py-16">
         <div className="grid gap-10">
           {avulsoGroups.map((group) => (
             <div key={group.title}>
-              <h2 className="text-2xl font-semibold tracking-[-0.03em]">{group.title}</h2>
-              <ul className="mt-4 divide-y divide-line border-t border-ink">
+              <h2 className="font-display text-3xl">{group.title}</h2>
+              <ul className="mt-4 divide-y divide-line overflow-hidden rounded-3xl border border-line bg-cream">
                 {group.items.map((item) => (
-                  <li key={item.name} className="grid gap-2 py-4 sm:grid-cols-[1fr_auto] sm:items-center">
+                  <li key={item.name} className="grid gap-2 px-5 py-4 sm:grid-cols-[1fr_auto] sm:items-center">
                     <div>
                       <p className="font-medium">{item.name}</p>
                       <p className="text-sm text-ink-soft">{item.detail}</p>
                     </div>
-                    <p className="text-sm font-semibold tabular-nums sm:text-right">{item.price}</p>
+                    <p className="font-display text-xl text-orange-deep sm:text-right">{item.price}</p>
                   </li>
                 ))}
               </ul>

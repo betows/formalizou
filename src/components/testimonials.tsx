@@ -8,17 +8,15 @@ export function Testimonials() {
   const current = testimonials[active] ?? testimonials[0];
 
   return (
-    <div>
-      <figure>
-        <blockquote className="max-w-3xl text-2xl font-medium leading-snug tracking-[-0.03em] md:text-[1.85rem]">
-          “{current.quote}”
-        </blockquote>
-        <figcaption className="mt-6 text-sm">
-          <span className="font-semibold">{current.name}</span>
-          <span className="text-ink-soft">, {current.role}</span>
+    <div className="grid gap-6 lg:grid-cols-[1.4fr_0.8fr]">
+      <figure className="rounded-[2rem] bg-ink p-7 text-cream md:p-10">
+        <blockquote className="font-display text-2xl leading-snug md:text-4xl">“{current.quote}”</blockquote>
+        <figcaption className="mt-8">
+          <p className="font-semibold">{current.name}</p>
+          <p className="text-sm text-cream/60">{current.role}</p>
         </figcaption>
       </figure>
-      <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2 border-t border-line pt-4" role="tablist" aria-label="Depoimentos">
+      <div className="grid gap-3" role="tablist" aria-label="Depoimentos">
         {testimonials.map((item, index) => {
           const selected = index === active;
           return (
@@ -28,9 +26,10 @@ export function Testimonials() {
               role="tab"
               aria-selected={selected}
               onClick={() => setActive(index)}
-              className={`text-sm ${selected ? "font-semibold underline decoration-orange decoration-2 underline-offset-4" : "text-ink-soft hover:text-ink"}`}
+              className={`rounded-2xl border px-4 py-4 text-left ${selected ? "border-orange bg-cream" : "border-line bg-cream/60 hover:bg-cream"}`}
             >
-              {item.name}
+              <span className="block font-medium">{item.name}</span>
+              <span className="mt-1 block text-sm text-ink-soft">{item.role}</span>
             </button>
           );
         })}

@@ -14,40 +14,42 @@ export function Accordion({
   const baseId = useId();
 
   if (items.length === 0) {
-    return <p className="border border-dashed border-line px-4 py-8 text-center text-ink-soft">{emptyLabel}</p>;
+    return (
+      <p className="rounded-2xl border border-dashed border-line bg-cream px-5 py-8 text-center text-ink-soft">
+        {emptyLabel}
+      </p>
+    );
   }
 
   return (
-    <div className="border-t border-line">
-      {items.map((item, index) => {
+    <div className="overflow-hidden rounded-2xl border border-line bg-cream shadow-[0_18px_40px_-28px_rgba(20,17,14,0.45)]">
+      {items.map((item) => {
         const open = openId === item.id;
         const panelId = `${baseId}-${item.id}`;
         return (
-          <div key={item.id} className="border-b border-line">
+          <div key={item.id} className="border-b border-line last:border-b-0">
             <h3>
               <button
                 type="button"
                 aria-expanded={open}
                 aria-controls={panelId}
                 onClick={() => setOpenId(open ? null : item.id)}
-                className="flex w-full items-baseline justify-between gap-6 py-4 text-left"
+                className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left transition-colors hover:bg-paper/80"
               >
-                <span className="flex gap-4">
-                  <span className="w-6 shrink-0 tabular-nums text-sm text-ink-soft">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                  <span className="font-medium">{item.question}</span>
-                </span>
-                <span className="shrink-0 text-lg leading-none text-ink-soft" aria-hidden="true">
-                  {open ? "–" : "+"}
+                <span className="font-medium text-ink">{item.question}</span>
+                <span
+                  className={`grid h-8 w-8 shrink-0 place-items-center rounded-full border border-line text-orange transition-transform ${open ? "rotate-45 bg-orange text-cream" : "bg-paper"}`}
+                  aria-hidden="true"
+                >
+                  +
                 </span>
               </button>
             </h3>
             <div id={panelId} className="acc-panel" data-open={open} role="region">
               <div className="acc-inner">
-                <div className="space-y-3 pb-5 pl-10 text-[0.98rem] leading-relaxed text-ink-soft">
-                  {item.answer.split("\n\n").map((paragraph, paragraphIndex) => (
-                    <p key={`${item.id}-${paragraphIndex}`} className="whitespace-pre-line">
+                <div className="space-y-3 px-5 pb-5 text-[0.98rem] leading-relaxed text-ink-soft">
+                  {item.answer.split("\n\n").map((paragraph, index) => (
+                    <p key={`${item.id}-${index}`} className="whitespace-pre-line">
                       {paragraph}
                     </p>
                   ))}

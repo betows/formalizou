@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { PageHero } from "@/components/page-hero";
 import { principles, team } from "@/lib/content";
 
@@ -16,45 +17,56 @@ export default function AboutPage() {
         title="Contabilidade simples para quem empreende."
         lede="Tudo começou com uma ideia direta: usar tecnologia para encurtar a distância entre o contador e o dono do negócio, sem tratar gente como número."
       />
-      <section className="mx-auto grid max-w-[72rem] gap-10 px-5 py-16 md:grid-cols-[1fr_1.1fr] md:py-20">
-        <p className="text-2xl font-medium leading-snug tracking-[-0.03em]">
-          Tratar as pessoas com mais compreensão, e não como números. Serviço justo, descomplicado e transparente.
-        </p>
-        <div className="space-y-4 leading-relaxed text-ink-soft">
+      <section className="mx-auto grid max-w-6xl items-center gap-10 px-5 py-16 md:grid-cols-2 md:py-24">
+        <div className="relative min-h-80 overflow-hidden rounded-[2rem]">
+          <Image
+            src="/images/workspace.jpg"
+            alt="Trabalho contábil feito à distância, em uma mesa com notebook"
+            fill
+            className="object-cover"
+            sizes="(min-width: 768px) 50vw, 100vw"
+          />
+        </div>
+        <div className="space-y-4 text-lg leading-relaxed text-ink-soft">
           <p>
-            A Formalizou nasceu para simplificar a rotina contábil e facilitar a troca de informação com quem empreende. As portas se abrem quando o serviço é claro.
+            A Formalizou nasceu para simplificar a rotina contábil e facilitar a troca de informação com quem empreende. As portas se abrem quando o serviço é justo, descomplicado e transparente.
           </p>
           <p>
             O que a equipe quer, no fim, é que mais pessoas consigam empreender de um jeito prático. Sem truque, sem enrolação e sem letra miúda.
           </p>
           <p>
-            Se a empresa ainda vive de documento físico, prazo perdido e ferramenta antiga, o atendimento foi desenhado para esse incômodo.
+            Se a sua empresa ainda vive de documento físico, prazo perdido e ferramenta antiga, o atendimento da Formalizou foi desenhado para esse incômodo.
           </p>
         </div>
       </section>
-      <section className="border-y border-line">
-        <dl className="mx-auto grid max-w-[72rem] md:grid-cols-3">
+      <section className="border-y border-line bg-white/50">
+        <div className="mx-auto grid max-w-6xl gap-4 px-5 py-16 md:grid-cols-3">
           {principles.map((item) => (
-            <div key={item.title} className="border-b border-line px-5 py-8 md:border-b-0 md:border-r md:last:border-r-0">
-              <dt className="text-lg font-semibold tracking-[-0.03em]">{item.title}</dt>
-              <dd className="mt-3 text-sm leading-relaxed text-ink-soft">{item.text}</dd>
-            </div>
+            <article key={item.title} className="rounded-3xl border border-line bg-cream p-6">
+              <h2 className="font-display text-3xl">{item.title}</h2>
+              <p className="mt-3 leading-relaxed text-ink-soft">{item.text}</p>
+            </article>
           ))}
-        </dl>
+        </div>
       </section>
-      <section className="mx-auto max-w-[72rem] px-5 py-16 md:py-20">
-        <h2 className="text-3xl font-semibold tracking-[-0.03em]">Equipe</h2>
-        <p className="mt-3 max-w-xl text-ink-soft">
+      <section className="mx-auto max-w-6xl px-5 py-16 md:py-24">
+        <h2 className="font-display text-4xl md:text-5xl">Nossa equipe</h2>
+        <p className="mt-3 max-w-2xl text-ink-soft">
           Contadores formados, com registro e história no ofício. O atendimento não passa por um robô.
         </p>
-        <div className="mt-8 border-t border-ink">
+        <div className="mt-8 grid gap-4 md:grid-cols-3">
           {team.map((person) => (
-            <article key={person.name} className="grid gap-3 border-b border-line py-7 md:grid-cols-[14rem_1fr] md:gap-10">
-              <div>
-                <h3 className="text-xl font-semibold tracking-[-0.03em]">{person.name}</h3>
-                <p className="text-sm text-orange-deep">{person.role}</p>
-              </div>
-              <p className="leading-relaxed text-ink-soft">{person.bio}</p>
+            <article key={person.name} className="rounded-3xl bg-ink p-6 text-cream">
+              <p className="grid h-14 w-14 place-items-center rounded-full bg-orange font-display text-xl" aria-hidden="true">
+                {person.name
+                  .split(" ")
+                  .slice(0, 2)
+                  .map((part) => part[0])
+                  .join("")}
+              </p>
+              <h3 className="mt-4 font-display text-3xl">{person.name}</h3>
+              <p className="text-sm text-amber">{person.role}</p>
+              <p className="mt-3 text-sm leading-relaxed text-cream/75">{person.bio}</p>
             </article>
           ))}
         </div>
