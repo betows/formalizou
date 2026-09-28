@@ -1,34 +1,21 @@
-export function Logo({ compact = false }: { compact?: boolean }) {
+export function Logo({ className = "text-ink" }: { className?: string }) {
   return (
-    <span className="inline-flex items-center gap-2.5">
-      <svg width="36" height="36" viewBox="0 0 36 36" aria-hidden="true">
-        <rect width="36" height="36" rx="18" fill="#ef6c1a" />
-        <path
-          d="M9 22.5c2.2-7 6.4-10.5 11-10.5 3.2 0 5.4 1.6 6.6 4.2"
-          fill="none"
-          stroke="#fffdf8"
-          strokeWidth="2.4"
-          strokeLinecap="round"
-        />
-        <path
-          d="M20.5 12.2c2.4 1.2 4.4 3.4 5.6 6.4"
-          fill="none"
-          stroke="#e8b03a"
-          strokeWidth="2.4"
-          strokeLinecap="round"
-        />
-        <circle cx="13.2" cy="23.2" r="2" fill="#fffdf8" />
+    <span className={`inline-flex items-center gap-2.5 ${className}`}>
+      <svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true" className="shrink-0">
+        <rect x="1.5" y="3.5" width="20" height="26" fill="none" stroke="currentColor" strokeWidth="1.6" />
+        <path d="M15.2 3.5 21.5 9.6H15.2Z" fill="currentColor" />
+        <g transform="translate(16 15) rotate(-8)">
+          <rect width="16" height="16" fill="#e23d12" />
+          <path
+            d="M4.2 8.3 6.7 10.8 11.8 5.4"
+            fill="none"
+            stroke="#fffcf8"
+            strokeWidth="1.6"
+            strokeLinecap="square"
+          />
+        </g>
       </svg>
-      <span className="leading-none">
-        <span className="block font-display text-[1.35rem] tracking-tight text-cream">
-          formalizou
-        </span>
-        {compact ? null : (
-          <span className="mt-1 block text-[10px] font-medium uppercase tracking-[0.16em] text-cream/55">
-            contabilidade descomplicada
-          </span>
-        )}
-      </span>
+      <span className="text-[1.35rem] font-semibold leading-none tracking-[-0.045em]">formalizou</span>
     </span>
   );
 }

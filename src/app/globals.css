@@ -1,17 +1,17 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
-  --font-display: var(--font-fraunces), Georgia, "Times New Roman", serif;
-  --color-ink: #14110e;
-  --color-ink-soft: #4a4036;
-  --color-cream: #fffdf8;
-  --color-paper: #f3eee6;
-  --color-orange: #ef6c1a;
-  --color-orange-deep: #c4470c;
-  --color-amber: #e8b03a;
-  --color-line: #e4d9c8;
-  --color-moss: #1c7a4a;
+  --font-sans: var(--font-familjen), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-familjen), ui-sans-serif, system-ui, sans-serif;
+  --color-ink: #1a1916;
+  --color-ink-soft: #5e584f;
+  --color-cream: #fffcf8;
+  --color-paper: #efece6;
+  --color-orange: #e23d12;
+  --color-orange-deep: #b42e0c;
+  --color-amber: #e23d12;
+  --color-line: #ddd6cb;
+  --color-moss: #1d6b42;
 }
 
 html {
@@ -19,25 +19,26 @@ html {
 }
 
 body {
-  background: var(--color-paper);
+  background: var(--color-cream);
   color: var(--color-ink);
   font-family: var(--font-sans);
+  font-feature-settings: "ss01" on, "kern" on;
 }
 
 ::selection {
-  background: #ef6c1a;
-  color: #fffdf8;
+  background: #1a1916;
+  color: #fffcf8;
 }
 
 :focus-visible {
   outline: 2px solid var(--color-orange);
-  outline-offset: 3px;
+  outline-offset: 2px;
 }
 
 .acc-panel {
   display: grid;
   grid-template-rows: 0fr;
-  transition: grid-template-rows 280ms ease;
+  transition: grid-template-rows 220ms ease;
 }
 
 .acc-panel[data-open="true"] {
@@ -48,33 +49,9 @@ body {
   overflow: hidden;
 }
 
-@keyframes rise {
-  from {
-    opacity: 0;
-    transform: translateY(14px);
-  }
-  to {
-    opacity: 1;
-    transform: none;
-  }
-}
-
-.rise {
-  animation: rise 0.7s ease both;
-}
-
-.rise-delay {
-  animation-delay: 0.12s;
-}
-
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
-  }
-
-  .rise,
-  .rise-delay {
-    animation: none;
   }
 
   .acc-panel {

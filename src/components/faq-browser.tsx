@@ -19,18 +19,18 @@ export function FaqBrowser() {
   }, [categoryId, normalized]);
 
   return (
-    <div className="grid gap-6 lg:grid-cols-[240px_1fr]">
+    <div className="grid gap-8 lg:grid-cols-[220px_1fr] lg:gap-16">
       <div>
         <label className="grid gap-2 text-sm">
           <span className="font-medium">Buscar</span>
           <input
             value={query}
             onChange={(event) => setQuery(event.target.value)}
-            placeholder="Ex.: certificado, migração"
-            className="rounded-xl border border-line bg-cream px-3 py-3 outline-none"
+            placeholder="certificado, migração"
+            className="border border-line bg-cream px-3 py-2 outline-none"
           />
         </label>
-        <div className="mt-4 grid gap-2" role="tablist" aria-label="Temas do FAQ">
+        <div className="mt-5 grid border-t border-line" role="tablist" aria-label="Temas do FAQ">
           {faqCategories.map((category) => {
             const selected = !normalized && category.id === categoryId;
             return (
@@ -43,8 +43,9 @@ export function FaqBrowser() {
                   setCategoryId(category.id);
                   setQuery("");
                 }}
-                className={`rounded-xl px-3 py-2 text-left text-sm ${selected ? "bg-ink text-cream" : "bg-cream text-ink hover:bg-white"}`}
+                className={`border-b border-line py-2.5 text-left text-sm ${selected ? "font-semibold text-ink" : "text-ink-soft hover:text-ink"}`}
               >
+                {selected ? <span className="mr-2 text-orange">—</span> : null}
                 {category.label}
               </button>
             );
@@ -52,15 +53,15 @@ export function FaqBrowser() {
         </div>
       </div>
       <div>
-        <p className="mb-3 text-sm text-ink-soft">
+        <p className="mb-2 text-sm text-ink-soft">
           {normalized
             ? `${items.length} resultado${items.length === 1 ? "" : "s"} para “${query.trim()}”.`
-            : "Abra uma pergunta por vez. Clique de novo para fechar."}
+            : "Abra uma pergunta por vez."}
         </p>
         <Accordion
           key={normalized ? `search-${normalized}` : categoryId}
           items={items}
-          emptyLabel="Nenhuma pergunta com esse termo. Tente certificado, abertura ou plano."
+          emptyLabel="Nenhuma pergunta com esse termo."
         />
       </div>
     </div>

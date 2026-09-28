@@ -16,7 +16,7 @@ export default function FaqPage() {
         title="Como podemos ajudar?"
         lede="Escolha um tema ou busque uma palavra. Só a pergunta que você clicar abre. Clicar de novo fecha."
       />
-      <section className="mx-auto max-w-6xl px-5 py-16">
+      <section className="mx-auto max-w-[72rem] px-5 py-16">
         <FaqBrowser />
       </section>
     </>

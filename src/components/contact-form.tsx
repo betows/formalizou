@@ -86,8 +86,8 @@ export function ContactForm({
 
   if (link) {
     return (
-      <div className="rounded-2xl bg-cream p-5 text-ink">
-        <p className="font-display text-2xl text-ink">Mensagem pronta.</p>
+      <div>
+        <p className="text-xl font-semibold tracking-[-0.03em]">Mensagem pronta.</p>
         <p className="mt-2 text-sm leading-relaxed text-ink-soft">
           Abrimos o WhatsApp com os seus dados. Se a janela não apareceu, use o botão abaixo.
         </p>
@@ -95,7 +95,7 @@ export function ContactForm({
           href={link}
           target="_blank"
           rel="noreferrer"
-          className="mt-4 inline-flex rounded-full bg-orange px-5 py-3 text-sm font-semibold text-cream"
+          className="mt-4 inline-flex bg-orange px-4 py-2.5 text-sm font-semibold text-cream"
         >
           Continuar no WhatsApp
         </a>
@@ -114,7 +114,7 @@ export function ContactForm({
   }
 
   const inputClass =
-    "w-full rounded-xl border border-line bg-cream px-3.5 py-3 text-sm text-ink outline-none placeholder:text-ink-soft/70";
+    "w-full border border-line bg-white px-3 py-2.5 text-sm text-ink outline-none placeholder:text-ink-soft/60";
 
   return (
     <form onSubmit={onSubmit} noValidate className="grid gap-3">
@@ -204,7 +204,7 @@ export function ContactForm({
       ) : null}
       <button
         type="submit"
-        className="mt-1 rounded-xl bg-orange px-4 py-3.5 text-sm font-semibold tracking-wide text-cream transition hover:bg-orange-deep"
+        className="mt-1 bg-orange px-4 py-3 text-sm font-semibold text-cream hover:bg-orange-deep"
       >
         {variant === "compact" ? "Solicitar contato" : "Chamar no WhatsApp"}
       </button>
