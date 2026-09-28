@@ -113,12 +113,14 @@ export function ContactForm({
     );
   }
 
-  const inputClass =
-    "w-full rounded-xl border border-line bg-cream px-3.5 py-3 text-sm text-ink outline-none placeholder:text-ink-soft/70";
+  const compact = variant === "compact";
+  const inputClass = compact
+    ? "w-full rounded-xl border border-line bg-cream px-3 py-2 text-sm text-ink outline-none placeholder:text-ink-soft/70"
+    : "w-full rounded-xl border border-line bg-cream px-3.5 py-3 text-sm text-ink outline-none placeholder:text-ink-soft/70";
 
   return (
-    <form onSubmit={onSubmit} noValidate className="grid gap-3">
-      <Field label="Nome" id={`${base}-nome`} error={errors.nome}>
+    <form onSubmit={onSubmit} noValidate className={compact ? "grid gap-2" : "grid gap-3"}>
+      <Field label="Nome" id={`${base}-nome`} error={errors.nome} compact={compact}>
         <input
           id={`${base}-nome`}
           name="nome"
@@ -129,7 +131,7 @@ export function ContactForm({
           placeholder="Seu nome"
         />
       </Field>
-      <Field label="Telefone" id={`${base}-telefone`} error={errors.telefone}>
+      <Field label="Telefone" id={`${base}-telefone`} error={errors.telefone} compact={compact}>
         <input
           id={`${base}-telefone`}
           name="telefone"
@@ -141,7 +143,7 @@ export function ContactForm({
           placeholder="(48) 99999-0000"
         />
       </Field>
-      <Field label="E-mail" id={`${base}-email`} error={errors.email}>
+      <Field label="E-mail" id={`${base}-email`} error={errors.email} compact={compact}>
         <input
           id={`${base}-email`}
           name="email"
@@ -204,7 +206,7 @@ export function ContactForm({
       ) : null}
       <button
         type="submit"
-        className="mt-1 rounded-xl bg-orange px-4 py-3.5 text-sm font-semibold tracking-wide text-cream transition hover:bg-orange-deep"
+        className={`mt-1 rounded-xl bg-orange px-4 text-sm font-semibold tracking-wide text-cream transition hover:bg-orange-deep ${compact ? "py-2.5" : "py-3.5"}`}
       >
         {variant === "compact" ? "Solicitar contato" : "Chamar no WhatsApp"}
       </button>
@@ -216,15 +218,17 @@ function Field({
   label,
   id,
   error,
+  compact = false,
   children,
 }: {
   label: string;
   id: string;
   error?: string;
+  compact?: boolean;
   children: ReactNode;
 }) {
   return (
-    <label htmlFor={id} className="grid gap-1.5 text-sm">
+    <label htmlFor={id} className={`grid text-sm ${compact ? "gap-1" : "gap-1.5"}`}>
       <span className="font-medium">{label}</span>
       {children}
       {error ? <span className="text-xs text-orange-deep">{error}</span> : null}

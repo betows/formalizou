@@ -35,11 +35,11 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-white/10 bg-ink/95 text-cream backdrop-blur">
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-8 px-5 py-3">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-3">
         <Link href="/" aria-label="Formalizou, página inicial" onClick={close}>
           <Logo />
         </Link>
-        <nav className="hidden items-center gap-6 lg:flex" aria-label="Principal">
+        <nav className="hidden items-center gap-4 xl:gap-6 lg:flex" aria-label="Principal">
           <Link href="/a-formalizou" className={navClass(pathname === "/a-formalizou")}>
             A Formalizou
           </Link>

@@ -21,11 +21,11 @@ export function PlanExplorer() {
 
   return (
     <div>
-      <div className="grid gap-4 lg:grid-cols-3">
-        {plans.map((item) => (
+      <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+        {plans.map((item, index) => (
           <article
             key={item.id}
-            className={`flex flex-col rounded-3xl border p-6 ${item.popular ? "border-orange bg-ink text-cream shadow-[0_24px_50px_-28px_rgba(239,108,26,0.8)]" : "border-line bg-cream text-ink"}`}
+            className={`flex flex-col rounded-3xl border p-5 sm:p-6 ${index === 2 ? "md:col-span-2 xl:col-span-1" : ""} ${item.popular ? "border-orange bg-ink text-cream shadow-[0_24px_50px_-28px_rgba(239,108,26,0.8)]" : "border-line bg-cream text-ink"}`}
           >
             <div className="flex items-center justify-between gap-3">
               <h3 className="font-display text-3xl">{item.name}</h3>
@@ -64,7 +64,7 @@ export function PlanExplorer() {
           <caption className="sr-only">Comparativo dos planos Formaliza, Evolui e Transforma</caption>
           <thead>
             <tr className="border-b border-line">
-              <th className="px-4 py-4 font-medium text-ink-soft">Recurso</th>
+              <th className="sticky left-0 z-10 bg-cream px-4 py-4 font-medium text-ink-soft">Recurso</th>
               {plans.map((item) => (
                 <th
                   key={item.id}
@@ -78,7 +78,7 @@ export function PlanExplorer() {
           <tbody>
             {planRows.map((row) => (
               <tr key={row.label} className="border-b border-line last:border-b-0">
-                <th className="px-4 py-3.5 font-medium text-ink">{row.label}</th>
+                <th className="sticky left-0 z-10 bg-cream px-4 py-3.5 font-medium text-ink shadow-[8px_0_12px_-10px_rgba(20,17,14,0.45)]">{row.label}</th>
                 {row.values.map((value, index) => (
                   <td
                     key={`${row.label}-${value}-${index}`}
@@ -95,7 +95,7 @@ export function PlanExplorer() {
 
       <dialog
         ref={dialogRef}
-        className="w-[min(32rem,calc(100%-2rem))] rounded-3xl border border-line bg-cream p-0 text-ink backdrop:bg-ink/60"
+        className="plan-dialog w-[min(32rem,calc(100%-2rem))] rounded-3xl border border-line bg-cream p-0 text-ink backdrop:bg-ink/60"
         onClose={() => setOpenId(null)}
         onClick={(event) => {
           if (event.target === dialogRef.current) close();

@@ -88,28 +88,6 @@ export const planRows: { label: string; values: [string, string, string] }[] = [
   },
 ];
 
-export const feeTables = [
-  {
-    title: "Empresas de serviços",
-    rows: [
-      ["até R$ 50.000", "R$ 159,90", "R$ 279,00"],
-      ["de R$ 50.000 a R$ 100.000", "R$ 280,00", "R$ 279,00"],
-      ["de R$ 100.000 a R$ 150.000", "R$ 420,00", "R$ 400,00"],
-      ["de R$ 150.000 a R$ 200.000", "R$ 580,00", "R$ 420,00"],
-      ["de R$ 200.000 a R$ 1.000.000", "R$ 710,00", "R$ 420,00"],
-      ["acima de R$ 1.000.000", "R$ 710,00", "R$ 700,00"],
-    ],
-  },
-  {
-    title: "Empresas de comércio",
-    rows: [
-      ["até R$ 100.000", "R$ 249,90", "R$ 390,00"],
-      ["de R$ 150.000 a R$ 200.000", "R$ 280,00", "R$ 390,00"],
-      ["acima de R$ 200.000", "R$ 380,00", "R$ 550,00"],
-    ],
-  },
-] as const;
-
 export const steps = [
   {
     title: "Escolha o plano ideal",
