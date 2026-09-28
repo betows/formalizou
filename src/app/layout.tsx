@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Fraunces, Source_Sans_3 } from "next/font/google";
 import { CookieNotice } from "@/components/cookie-notice";
+import { HashScroll } from "@/components/hash-scroll";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { WhatsAppButton } from "@/components/whatsapp-button";
@@ -40,6 +41,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         >
           Ir para o conteúdo
         </a>
+        <HashScroll />
         <SiteHeader />
         <main id="conteudo">{children}</main>
         <SiteFooter />

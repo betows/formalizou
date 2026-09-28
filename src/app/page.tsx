@@ -4,6 +4,7 @@ import { Accordion } from "@/components/accordion";
 import { ContactForm } from "@/components/contact-form";
 import { HowItWorks } from "@/components/how-it-works";
 import { PlanExplorer } from "@/components/plan-explorer";
+import { Reveal } from "@/components/reveal";
 import { Testimonials } from "@/components/testimonials";
 import { homeFaq } from "@/lib/content";
 
@@ -12,7 +13,7 @@ const badges = ["100% online", "Atendimento humanizado", "Transparência total",
 export default function HomePage() {
   return (
     <>
-      <section className="relative overflow-hidden bg-ink text-cream">
+      <section className="hero-screen relative flex items-center overflow-hidden bg-ink text-cream">
         <div className="mx-auto grid max-w-6xl items-start gap-6 px-5 py-6 sm:py-8 lg:grid-cols-[1.05fr_0.9fr] lg:items-center lg:gap-8 lg:py-6 xl:py-12">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.12em] text-amber">Contabilidade online</p>
@@ -59,7 +60,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="mx-auto grid max-w-6xl gap-10 px-5 py-16 md:grid-cols-[0.9fr_1.1fr] md:py-24">
+      <Reveal id="sobre" className="mx-auto grid max-w-6xl gap-10 px-5 py-16 md:grid-cols-[0.9fr_1.1fr] md:py-24">
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.12em] text-orange">O que é</p>
           <h2 className="mt-2 font-display text-3xl leading-tight sm:text-4xl md:text-5xl">A Formalizou</h2>
@@ -75,9 +76,9 @@ export default function HomePage() {
             Conheça a história e a equipe
           </Link>
         </div>
-      </section>
+      </Reveal>
 
-      <section id="planos" className="scroll-mt-24 border-y border-line bg-paper">
+      <Reveal id="planos" className="border-y border-line bg-paper">
         <div className="mx-auto max-w-6xl px-5 py-16 md:py-24">
           <div className="max-w-2xl">
             <p className="text-xs font-semibold uppercase tracking-[0.12em] text-orange">Nossos planos</p>
@@ -97,17 +98,17 @@ export default function HomePage() {
             .
           </p>
         </div>
-      </section>
+      </Reveal>
 
-      <section id="como-funciona" className="scroll-mt-24 mx-auto max-w-6xl px-5 py-16 md:py-24">
+      <Reveal id="como-funciona" className="mx-auto max-w-6xl px-5 py-16 md:py-24">
         <div className="mb-8 max-w-2xl">
           <p className="text-xs font-semibold uppercase tracking-[0.12em] text-orange">Como funciona</p>
           <h2 className="mt-2 font-display text-3xl leading-tight sm:text-4xl md:text-5xl">Três passos, um de cada vez</h2>
         </div>
         <HowItWorks />
-      </section>
+      </Reveal>
 
-      <section id="faq" className="scroll-mt-24 bg-white/40">
+      <Reveal id="faq" className="bg-white/40">
         <div className="mx-auto grid max-w-6xl gap-8 px-5 py-16 md:grid-cols-[0.8fr_1.2fr] md:py-24">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.12em] text-orange">Ainda com dúvidas?</p>
@@ -121,17 +122,17 @@ export default function HomePage() {
           </div>
           <Accordion items={homeFaq} />
         </div>
-      </section>
+      </Reveal>
 
-      <section id="clientes" className="scroll-mt-24 mx-auto max-w-6xl px-5 py-16 md:py-24">
+      <Reveal id="clientes" className="mx-auto max-w-6xl px-5 py-16 md:py-24">
         <div className="mb-8">
           <p className="text-xs font-semibold uppercase tracking-[0.12em] text-orange">Clientes</p>
           <h2 className="mt-2 max-w-3xl font-display text-3xl leading-tight sm:text-4xl md:text-5xl">Quem já deixou a contabilidade com a gente</h2>
         </div>
         <Testimonials />
-      </section>
+      </Reveal>
 
-      <section className="mx-auto grid max-w-6xl items-center gap-8 px-5 pb-20 md:grid-cols-2">
+      <Reveal id="contato" className="mx-auto grid max-w-6xl items-center gap-8 px-5 pb-20 md:grid-cols-2">
         <div className="relative min-h-72 overflow-hidden rounded-[2rem]">
           <Image
             src="/images/workspace.jpg"
@@ -151,7 +152,7 @@ export default function HomePage() {
             <ContactForm variant="full" idPrefix="home-contato" />
           </div>
         </div>
-      </section>
+      </Reveal>
     </>
   );
 }

@@ -2,19 +2,19 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useState, type MouseEvent } from "react";
 import { Logo } from "@/components/logo";
 import { WHATSAPP_URL } from "@/lib/site";
 
 const links = [
-  { href: "/a-formalizou", label: "A Formalizou" },
+  { href: "/#sobre", label: "A Formalizou" },
   { href: "/#clientes", label: "Clientes" },
-  { href: "/faq", label: "FAQ" },
-  { href: "/contato", label: "Contato" },
+  { href: "/#faq", label: "FAQ" },
+  { href: "/#contato", label: "Contato" },
 ];
 
 const serviceLinks = [
-  { href: "/planos", label: "Nossos planos" },
+  { href: "/#planos", label: "Nossos planos" },
   { href: "/servicos-avulsos", label: "Serviços avulsos" },
 ];
 
@@ -33,14 +33,28 @@ export function SiteHeader() {
     setServicesOpen(false);
   }
 
+  function onMenuClick(event: MouseEvent<HTMLAnchorElement>, href: string) {
+    const menuWasOpen = open;
+    close();
+    const id = href.startsWith("/#") ? href.slice(2) : "";
+    if (!id || pathname !== "/") return;
+    event.preventDefault();
+    window.setTimeout(() => {
+      const target = document.getElementById(id);
+      if (!target) return;
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+      history.pushState(null, "", `/#${id}`);
+    }, menuWasOpen ? 80 : 0);
+  }
+
   return (
     <header className="sticky top-0 z-40 border-b border-white/10 bg-ink/95 text-cream backdrop-blur">
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-3">
+      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-5">
         <Link href="/" aria-label="Formalizou, página inicial" onClick={close}>
           <Logo />
         </Link>
         <nav className="hidden items-center gap-4 xl:gap-6 lg:flex" aria-label="Principal">
-          <Link href="/a-formalizou" className={navClass(pathname === "/a-formalizou")}>
+          <Link href="/#sobre" className={navClass(pathname === "/a-formalizou")} onClick={(event) => onMenuClick(event, "/#sobre")}>
             A Formalizou
           </Link>
           <div
@@ -67,8 +81,8 @@ export function SiteHeader() {
                     <Link
                       key={link.href}
                       href={link.href}
-                      className={`block rounded-lg px-3 py-2 text-sm ${pathname === link.href ? "bg-paper font-medium" : "hover:bg-paper"}`}
-                      onClick={close}
+                      className={`block rounded-lg px-3 py-2 text-sm ${pathname === link.href || (link.href === "/#planos" && pathname === "/planos") ? "bg-paper font-medium" : "hover:bg-paper"}`}
+                      onClick={(event) => onMenuClick(event, link.href)}
                     >
                       {link.label}
                     </Link>
@@ -78,7 +92,7 @@ export function SiteHeader() {
             ) : null}
           </div>
           {links.slice(1).map((link) => (
-            <Link key={link.href} href={link.href} className={navClass(pathname === link.href)}>
+            <Link key={link.href} href={link.href} className={navClass(pathname === link.href)} onClick={(event) => onMenuClick(event, link.href)}>
               {link.label}
             </Link>
           ))}
@@ -110,12 +124,12 @@ export function SiteHeader() {
         <nav id="menu-mobile" className="border-t border-white/10 px-5 py-2 lg:hidden" aria-label="Mobile">
           <div className="divide-y divide-white/10 text-sm">
             {links.map((link) => (
-              <Link key={link.href} href={link.href} className="block py-3 text-cream/90" onClick={close}>
+              <Link key={link.href} href={link.href} className="block py-3 text-cream/90" onClick={(event) => onMenuClick(event, link.href)}>
                 {link.label}
               </Link>
             ))}
             {serviceLinks.map((link) => (
-              <Link key={link.href} href={link.href} className="block py-3 pl-3 text-cream/70" onClick={close}>
+              <Link key={link.href} href={link.href} className="block py-3 pl-3 text-cream/70" onClick={(event) => onMenuClick(event, link.href)}>
                 {link.label}
               </Link>
             ))}
