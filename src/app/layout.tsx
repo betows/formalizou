@@ -1,20 +1,22 @@
 import type { Metadata } from "next";
-import { Fraunces, Outfit } from "next/font/google";
+import { Fraunces, Source_Sans_3 } from "next/font/google";
 import { CookieNotice } from "@/components/cookie-notice";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { WhatsAppButton } from "@/components/whatsapp-button";
 import "./globals.css";
 
-const outfit = Outfit({
+const sourceSans = Source_Sans_3({
   subsets: ["latin"],
-  variable: "--font-outfit",
+  weight: ["400", "600"],
+  variable: "--font-body",
   display: "swap",
 });
 
 const fraunces = Fraunces({
   subsets: ["latin"],
   style: ["normal", "italic"],
+  weight: ["500", "600"],
   variable: "--font-fraunces",
   display: "swap",
 });
@@ -30,7 +32,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="pt-BR" className={`${outfit.variable} ${fraunces.variable} h-full antialiased`}>
+    <html lang="pt-BR" className={`${sourceSans.variable} ${fraunces.variable} h-full antialiased`}>
       <body className="min-h-full">
         <a
           href="#conteudo"

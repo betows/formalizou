@@ -15,8 +15,8 @@ export default function HomePage() {
       <section className="relative overflow-hidden bg-ink text-cream">
         <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 py-14 lg:grid-cols-[1.05fr_0.95fr] lg:py-20">
           <div className="rise">
-            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-amber">Contabilidade online</p>
-            <h1 className="mt-4 font-display text-5xl leading-[0.95] tracking-tight md:text-7xl">
+            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-amber">Contabilidade online</p>
+            <h1 className="mt-4 font-display text-5xl leading-[1.02] md:text-[4.25rem]">
               <span className="italic text-amber">Seja dono</span>
               <span className="mt-1 block">do seu</span>
               <span className="mt-1 block text-orange">negócio.</span>
@@ -46,7 +46,7 @@ export default function HomePage() {
               <div className="absolute inset-0 bg-gradient-to-t from-ink/50 to-transparent" />
             </div>
             <div className="relative z-10 -mt-16 ml-auto w-[min(100%,24rem)] rounded-[1.6rem] bg-cream p-5 text-ink shadow-2xl md:-mt-28">
-              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-orange">Abra agora</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-orange">Abra agora</p>
               <p className="font-display text-3xl leading-none">sua empresa</p>
               <div className="mt-4">
                 <ContactForm variant="compact" idPrefix="hero" />
@@ -58,7 +58,7 @@ export default function HomePage() {
 
       <section className="mx-auto grid max-w-6xl gap-10 px-5 py-16 md:grid-cols-[0.9fr_1.1fr] md:py-24">
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-orange">O que é</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.12em] text-orange">O que é</p>
           <h2 className="mt-2 font-display text-4xl leading-tight md:text-5xl">A Formalizou</h2>
         </div>
         <div className="text-lg leading-relaxed text-ink-soft">
@@ -77,7 +77,7 @@ export default function HomePage() {
       <section id="planos" className="scroll-mt-24 border-y border-line bg-paper">
         <div className="mx-auto max-w-6xl px-5 py-16 md:py-24">
           <div className="max-w-2xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-orange">Nossos planos</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-orange">Nossos planos</p>
             <h2 className="mt-2 font-display text-4xl leading-tight md:text-5xl">Escolha o plano e abra só o que importa</h2>
             <p className="mt-4 text-lg text-ink-soft">
               Especialistas cuidam da contabilidade com atendimento humano. O comparativo fica aberto. Os detalhes de cada plano abrem um de cada vez.
@@ -98,7 +98,7 @@ export default function HomePage() {
 
       <section id="como-funciona" className="scroll-mt-24 mx-auto max-w-6xl px-5 py-16 md:py-24">
         <div className="mb-8 max-w-2xl">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-orange">Como funciona</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.12em] text-orange">Como funciona</p>
           <h2 className="mt-2 font-display text-4xl leading-tight md:text-5xl">Três passos, um de cada vez</h2>
         </div>
         <HowItWorks />
@@ -107,7 +107,7 @@ export default function HomePage() {
       <section id="faq" className="scroll-mt-24 bg-white/40">
         <div className="mx-auto grid max-w-6xl gap-8 px-5 py-16 md:grid-cols-[0.8fr_1.2fr] md:py-24">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-orange">Ainda com dúvidas?</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-orange">Ainda com dúvidas?</p>
             <h2 className="mt-2 font-display text-4xl leading-tight md:text-5xl">Perguntas frequentes</h2>
             <p className="mt-4 text-ink-soft">
               Clique em uma pergunta para ler a resposta. Clique de novo para fechar. As outras permanecem fechadas.
@@ -122,7 +122,7 @@ export default function HomePage() {
 
       <section id="clientes" className="scroll-mt-24 mx-auto max-w-6xl px-5 py-16 md:py-24">
         <div className="mb-8">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-orange">Clientes</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.12em] text-orange">Clientes</p>
           <h2 className="mt-2 font-display text-4xl leading-tight md:text-5xl">Quem já deixou a contabilidade com a gente</h2>
         </div>
         <Testimonials />
@@ -139,7 +139,7 @@ export default function HomePage() {
           />
         </div>
         <div className="rounded-[2rem] bg-ink p-6 text-cream md:p-8">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-amber">Vamos conversar?</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.12em] text-amber">Vamos conversar?</p>
           <h2 className="mt-2 font-display text-4xl">Conte o momento da sua empresa</h2>
           <p className="mt-3 text-sm text-cream/70">
             O formulário monta a mensagem e abre o WhatsApp da Formalizou. Nada fica salvo neste site.

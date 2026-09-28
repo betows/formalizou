@@ -18,7 +18,7 @@ export default function ContactPage() {
       />
       <section className="mx-auto grid max-w-6xl gap-8 px-5 py-16 lg:grid-cols-[0.8fr_1.2fr]">
         <div className="rounded-3xl bg-ink p-6 text-cream">
-          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-amber">Florianópolis</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.12em] text-amber">Florianópolis</p>
           <p className="mt-3 font-display text-3xl leading-tight">
             {SITE.address.line1}
             <br />

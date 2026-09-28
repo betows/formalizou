@@ -105,7 +105,7 @@ export function PlanExplorer() {
           <div className="p-6">
             <div className="flex items-start justify-between gap-4">
               <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-orange">Plano</p>
+                <p className="text-xs font-semibold uppercase tracking-[0.12em] text-orange">Plano</p>
                 <h2 className="font-display text-4xl">{plan.name}</h2>
                 <p className="mt-1 text-ink-soft">
                   Ideal para {plan.audience.charAt(0).toLowerCase() + plan.audience.slice(1)}

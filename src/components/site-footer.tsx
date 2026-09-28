@@ -26,7 +26,7 @@ export function SiteFooter() {
           </div>
         </div>
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-amber">Central de atendimento</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.12em] text-amber">Central de atendimento</p>
           <p className="mt-3 font-display text-2xl">{SITE.address.city}</p>
           <p className="mt-2 text-sm leading-relaxed text-cream/70">
             {SITE.address.line1}
@@ -38,7 +38,7 @@ export function SiteFooter() {
           </a>
         </div>
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-amber">Mapa</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.12em] text-amber">Mapa</p>
           <ul className="mt-3 grid gap-2 text-sm text-cream/80">
             <li>
               <Link href="/a-formalizou" className="hover:text-cream">
