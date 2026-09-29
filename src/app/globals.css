@@ -1,16 +1,16 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: var(--font-body), ui-sans-serif, system-ui, sans-serif;
-  --font-display: var(--font-fraunces), Georgia, "Times New Roman", serif;
-  --color-ink: #14110e;
-  --color-ink-soft: #4a4036;
-  --color-cream: #fffdf8;
-  --color-paper: #f3eee6;
-  --color-orange: #ef6c1a;
-  --color-orange-deep: #c4470c;
-  --color-amber: #e8b03a;
-  --color-line: #e4d9c8;
+  --font-sans: var(--font-body), "Trebuchet MS", sans-serif;
+  --font-display: var(--font-display-face), "Trebuchet MS", sans-serif;
+  --color-ink: #0a4160;
+  --color-ink-soft: #3e5c70;
+  --color-cream: #f7fafb;
+  --color-paper: #e7eef2;
+  --color-orange: #d76912;
+  --color-orange-deep: #b4530c;
+  --color-amber: #d76912;
+  --color-line: #d3e0e7;
   --color-moss: #1c7a4a;
 }
 
@@ -47,13 +47,13 @@ body {
 }
 
 .font-display {
-  font-weight: 500;
-  letter-spacing: -0.025em;
+  font-weight: 800;
+  letter-spacing: -0.03em;
 }
 
 ::selection {
-  background: #ef6c1a;
-  color: #fffdf8;
+  background: #d76912;
+  color: #f7fafb;
 }
 
 :focus-visible {
@@ -127,6 +127,19 @@ dialog.plan-dialog {
   animation: accent-grow 0.55s 0.12s ease both;
 }
 
+@keyframes brand-orbit {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.brand-orbit {
+  animation: brand-orbit 48s linear infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -142,6 +155,10 @@ dialog.plan-dialog {
     opacity: 1;
     transform: none;
     transition: none;
+  }
+
+  .brand-orbit {
+    animation: none;
   }
 
   .acc-panel {

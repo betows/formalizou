@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Fraunces, Source_Sans_3 } from "next/font/google";
+import { Nunito, Outfit } from "next/font/google";
 import { CookieNotice } from "@/components/cookie-notice";
 import { HashScroll } from "@/components/hash-scroll";
 import { SiteFooter } from "@/components/site-footer";
@@ -7,18 +7,17 @@ import { SiteHeader } from "@/components/site-header";
 import { WhatsAppButton } from "@/components/whatsapp-button";
 import "./globals.css";
 
-const sourceSans = Source_Sans_3({
+const outfit = Outfit({
   subsets: ["latin"],
-  weight: ["400", "600"],
+  weight: ["400", "500", "600"],
   variable: "--font-body",
   display: "swap",
 });
 
-const fraunces = Fraunces({
+const nunito = Nunito({
   subsets: ["latin"],
-  style: ["normal", "italic"],
-  weight: ["500", "600"],
-  variable: "--font-fraunces",
+  weight: ["700", "800"],
+  variable: "--font-display-face",
   display: "swap",
 });
 
@@ -33,7 +32,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="pt-BR" className={`${sourceSans.variable} ${fraunces.variable} h-full antialiased`}>
+    <html lang="pt-BR" className={`${outfit.variable} ${nunito.variable} h-full antialiased`}>
       <body className="min-h-full">
         <a
           href="#conteudo"

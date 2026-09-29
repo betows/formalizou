@@ -7,7 +7,7 @@ export function SiteFooter() {
     <footer className="bg-ink text-cream">
       <div className="mx-auto grid max-w-6xl gap-10 px-5 py-14 md:grid-cols-[1.3fr_1fr_1fr]">
         <div>
-          <Logo />
+          <Logo variant="footer" />
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-cream/70">
             Escritório de contabilidade online para micro e pequenas empresas. Transparência, atendimento humano e menos papel na gaveta.
           </p>

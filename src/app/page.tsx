@@ -14,11 +14,19 @@ export default function HomePage() {
   return (
     <>
       <section className="hero-screen relative flex items-center overflow-hidden bg-ink text-cream">
-        <div className="mx-auto grid max-w-6xl items-start gap-6 px-5 py-6 sm:py-8 lg:grid-cols-[1.05fr_0.9fr] lg:items-center lg:gap-8 lg:py-6 xl:py-12">
+        <Image
+          src="/brand/submarca.png"
+          alt=""
+          width={622}
+          height={770}
+          aria-hidden
+          className="brand-orbit pointer-events-none absolute -right-8 -top-20 hidden w-52 opacity-30 lg:block"
+        />
+        <div className="relative mx-auto grid w-full max-w-6xl items-start gap-6 px-5 py-6 sm:py-8 lg:grid-cols-[1.05fr_0.9fr] lg:items-center lg:gap-8 lg:py-6 xl:py-12">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.12em] text-amber">Contabilidade online</p>
-            <h1 className="mt-3 font-display text-[2.6rem] leading-[1.02] sm:text-5xl lg:text-[3.15rem] xl:text-[3.6rem]">
-              <span className="italic text-amber">Seja dono</span>
+            <h1 className="mt-3 font-display text-[2.6rem] leading-[0.98] sm:text-5xl lg:text-[3.15rem] xl:text-[3.6rem]">
+              <span className="block">Seja dono</span>
               <span className="mt-1 block">do seu</span>
               <span className="mt-1 block text-orange">negócio.</span>
             </h1>

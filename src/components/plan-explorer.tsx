@@ -25,7 +25,7 @@ export function PlanExplorer() {
         {plans.map((item, index) => (
           <article
             key={item.id}
-            className={`flex flex-col rounded-3xl border p-5 sm:p-6 ${index === 2 ? "md:col-span-2 xl:col-span-1" : ""} ${item.popular ? "border-orange bg-ink text-cream shadow-[0_24px_50px_-28px_rgba(239,108,26,0.8)]" : "border-line bg-cream text-ink"}`}
+            className={`flex flex-col rounded-3xl border p-5 sm:p-6 ${index === 2 ? "md:col-span-2 xl:col-span-1" : ""} ${item.popular ? "border-orange bg-ink text-cream shadow-[0_24px_50px_-28px_rgba(215,105,18,0.7)]" : "border-line bg-cream text-ink"}`}
           >
             <div className="flex items-center justify-between gap-3">
               <h3 className="font-display text-3xl">{item.name}</h3>
