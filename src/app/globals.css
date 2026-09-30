@@ -39,6 +39,36 @@ html {
 .d3 { animation-delay: 0.24s; }
 .d4 { animation-delay: 0.34s; }
 
+@keyframes from-left {
+  from {
+    opacity: 0;
+    transform: translate3d(-18px, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes from-right {
+  from {
+    opacity: 0;
+    transform: translate3d(18px, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.from-left {
+  animation: from-left 0.9s cubic-bezier(0.22, 0.7, 0.2, 1) both;
+}
+
+.from-right {
+  animation: from-right 0.9s 0.12s cubic-bezier(0.22, 0.7, 0.2, 1) both;
+}
+
 @keyframes marquee {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
@@ -62,7 +92,14 @@ html {
 }
 
 body {
-  background: var(--color-cream);
+  background-color: var(--color-cream);
+  background-image: repeating-linear-gradient(
+    90deg,
+    transparent 0,
+    transparent 7.5rem,
+    rgb(23 23 23 / 0.035) 7.5rem,
+    rgb(23 23 23 / 0.035) calc(7.5rem + 1px)
+  );
   color: var(--color-ink);
   font-family: var(--font-sans);
   font-size: 1.0625rem;
@@ -77,6 +114,16 @@ body {
 
 .marquee-track:hover {
   animation-play-state: paused;
+}
+
+@keyframes card-float {
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.card-float {
+  animation: card-float 7s ease-in-out infinite;
 }
 
 ::selection {
@@ -165,7 +212,10 @@ dialog.plan-dialog {
   .hero-card,
   .accent-bar,
   .rise-in,
-  .marquee-track {
+  .from-left,
+  .from-right,
+  .marquee-track,
+  .card-float {
     animation: none;
   }
 

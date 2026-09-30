@@ -11,29 +11,98 @@ import { WHATSAPP_URL } from "@/lib/site";
 export default function HomePage() {
   return (
     <>
-      <section className="mx-auto max-w-6xl px-5 py-16 md:py-24">
-        <div className="max-w-3xl">
-          <h1 className="rise-in font-display text-5xl leading-[1.05] tracking-tight md:text-6xl">
-            Seja dono do seu negócio.
-          </h1>
-          <p className="rise-in d1 mt-6 max-w-xl text-lg leading-relaxed text-ink-soft">
-            Deixe a gestão contábil e financeira da sua empresa com a gente e ganhe tempo para focar nas suas atividades.
-          </p>
-          <div className="rise-in d2 mt-8 flex flex-wrap gap-3">
-            <a href="#contato" className="inline-flex h-11 items-center rounded-full bg-ink px-5 text-sm font-medium text-cream">
-              Solicitar contato
-            </a>
-            <a
-              href={WHATSAPP_URL}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex h-11 items-center rounded-full border border-ink px-5 text-sm font-medium"
-            >
-              WhatsApp
-            </a>
+      <section className="mx-auto max-w-6xl px-5 pt-28 pb-10 md:pt-32">
+        <div className="grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
+          <div className="from-left">
+            <h1 className="rise-in font-display text-5xl leading-[1.02] tracking-tight md:text-6xl">
+              Seja dono do seu negócio.
+            </h1>
+            <p className="rise-in d1 mt-6 max-w-md text-lg leading-relaxed text-ink-soft">
+              Deixe a gestão contábil e financeira da sua empresa com a gente e ganhe tempo para focar nas suas atividades.
+            </p>
+            <div className="rise-in d2 mt-8 flex flex-wrap gap-3">
+              <a href="#contato" className="inline-flex h-12 items-center gap-3 rounded-full bg-ink pr-1.5 pl-5 text-sm font-medium text-white">
+                Solicitar contato
+                <span className="grid h-9 w-9 place-items-center rounded-full bg-white text-ink" aria-hidden="true">
+                  →
+                </span>
+              </a>
+              <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex h-12 items-center gap-3 rounded-full border border-ink/80 bg-cream pr-1.5 pl-5 text-sm font-medium"
+              >
+                WhatsApp
+                <span className="grid h-9 w-9 place-items-center rounded-full border border-ink/15 bg-white" aria-hidden="true">
+                  →
+                </span>
+              </a>
+            </div>
+          </div>
+          <div className="from-right relative mx-auto w-full max-w-md pb-10">
+            <div className="rounded-[1.6rem] border border-black/5 bg-white p-4 shadow-[0_20px_50px_-24px_rgba(23,23,23,0.35)]">
+              <div className="flex items-center justify-between text-sm">
+                <p className="font-medium">Clientes</p>
+                <p className="text-ink-soft">Recentes</p>
+              </div>
+              <ul className="mt-3 grid gap-1">
+                {[
+                  ["Deborah Viegas", "Founder da Balls Style", true],
+                  ["Giovanna Innocencio", "Espaço Innocencio Pansica", false],
+                  ["Luiz Barazzutti", "Fetransporte Brasil", false],
+                ].map(([name, role, hot]) => (
+                  <li
+                    key={String(name)}
+                    className={`flex items-center gap-3 rounded-2xl px-3 py-2.5 ${hot ? "bg-amber" : ""}`}
+                  >
+                    <span className="grid h-9 w-9 place-items-center rounded-full bg-ink text-xs text-white">
+                      {String(name)
+                        .split(" ")
+                        .slice(0, 2)
+                        .map((part) => part[0])
+                        .join("")}
+                    </span>
+                    <span>
+                      <span className="block text-sm font-medium">{name}</span>
+                      <span className="block text-xs text-ink-soft">{role}</span>
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="card-float absolute -right-2 -bottom-8 w-44 rounded-[1.4rem] border border-black/5 bg-white p-4 shadow-[0_16px_40px_-20px_rgba(23,23,23,0.4)] sm:-right-6">
+              <p className="text-xs text-ink-soft">Faixas dos planos</p>
+              <p className="mt-1 font-display text-2xl tracking-tight">R$ 60 mil</p>
+              <div className="mt-3 flex h-16 items-end gap-1.5">
+                {[
+                  ["15", "bg-ink/15", "42%"],
+                  ["25", "bg-amber", "62%"],
+                  ["60", "bg-ink", "100%"],
+                ].map(([label, color, height]) => (
+                  <span key={label} className={`flex-1 rounded-md ${color}`} style={{ height }} />
+                ))}
+              </div>
+              <div className="mt-2 flex justify-between text-[0.65rem] text-ink-soft">
+                <span>15</span>
+                <span>25</span>
+                <span>60</span>
+              </div>
+            </div>
           </div>
         </div>
-        <div className="rise-in d3 mt-16 grid gap-px overflow-hidden rounded-[1.75rem] border border-line bg-line sm:grid-cols-3">
+        <div className="mt-28 overflow-hidden">
+          <div className="marquee-track flex w-max items-center gap-12 text-sm text-ink-soft">
+            {["Balls Style", "Espaço Innocencio Pansica", "Fetransporte Brasil", "Balls Style", "Espaço Innocencio Pansica", "Fetransporte Brasil"].map(
+              (name, index) => (
+                <span key={`${name}-${index}`} className="font-medium tracking-tight">
+                  {name}
+                </span>
+              ),
+            )}
+          </div>
+        </div>
+        <div className="rise-in d4 mt-16 grid gap-px overflow-hidden rounded-[1.75rem] border border-line bg-line sm:grid-cols-3">
           {steps.map((step, index) => (
             <article key={step.title} className="bg-cream p-6">
               <p className="font-display text-sm text-ink-soft">0{index + 1}</p>

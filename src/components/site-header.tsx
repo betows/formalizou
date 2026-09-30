@@ -19,7 +19,7 @@ const serviceLinks = [
 ];
 
 function navClass(active: boolean) {
-  return `inline-flex h-10 items-center rounded-full px-3 text-sm leading-none transition ${active ? "bg-ink/10 text-ink" : "text-ink/70 hover:bg-ink/5 hover:text-ink"}`;
+  return `inline-flex h-10 items-center rounded-full px-3 text-sm leading-none transition ${active ? "text-ink" : "text-ink/70 hover:text-ink"}`;
 }
 
 export function SiteHeader() {
@@ -48,12 +48,12 @@ export function SiteHeader() {
   }
 
   return (
-    <header className="sticky top-0 z-50 border-b border-line bg-cream/90 text-ink backdrop-blur">
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-5">
+    <header className="pointer-events-none fixed top-4 right-0 left-0 z-50 flex flex-col items-center px-3">
+      <div className="pointer-events-auto flex h-14 max-w-[calc(100%-0.5rem)] items-center gap-2 rounded-full bg-white px-2 text-ink shadow-[0_1px_20px_#e0d7c680] sm:gap-4 sm:px-3">
         <Link href="/" aria-label="Formalizou, página inicial" className="flex shrink-0 items-center" onClick={close}>
           <Logo />
         </Link>
-        <nav className="hidden h-full items-center gap-1 whitespace-nowrap lg:flex" aria-label="Principal">
+        <nav className="hidden h-full items-center gap-1 whitespace-nowrap md:flex" aria-label="Principal">
           <Link href="/#sobre" className={navClass(pathname === "/a-formalizou")} onClick={(event) => onMenuClick(event, "/#sobre")}>
             A Formalizou
           </Link>
@@ -91,24 +91,25 @@ export function SiteHeader() {
               </div>
             ) : null}
           </div>
-          {links.slice(1).map((link) => (
-            <Link key={link.href} href={link.href} className={navClass(pathname === link.href)} onClick={(event) => onMenuClick(event, link.href)}>
-              {link.label}
-            </Link>
-          ))}
+          <Link href="/#planos" className={navClass(pathname === "/planos")} onClick={(event) => onMenuClick(event, "/#planos")}>
+            Planos
+          </Link>
         </nav>
         <div className="flex items-center gap-3">
           <a
             href={WHATSAPP_URL}
             target="_blank"
             rel="noreferrer"
-            className="hidden h-10 items-center rounded-full bg-ink px-4 text-sm font-medium text-cream transition hover:bg-black sm:inline-flex"
+            className="hidden h-10 items-center gap-2 rounded-full bg-ink pr-1 pl-4 text-sm font-medium text-white sm:inline-flex"
           >
             WhatsApp
+            <span className="grid h-8 w-8 place-items-center rounded-full bg-white text-ink" aria-hidden="true">
+              →
+            </span>
           </a>
           <button
             type="button"
-            className="grid h-10 w-10 place-items-center rounded-full border border-ink/10 lg:hidden"
+            className="grid h-10 w-10 place-items-center rounded-full md:hidden"
             aria-expanded={open}
             aria-controls="menu-mobile"
             onClick={() => setOpen((value) => !value)}
@@ -121,7 +122,7 @@ export function SiteHeader() {
         </div>
       </div>
       {open ? (
-        <nav id="menu-mobile" className="border-t border-line bg-cream px-5 py-2 lg:hidden" aria-label="Mobile">
+        <nav id="menu-mobile" className="pointer-events-auto mx-auto mt-2 w-[min(100%-1.5rem,24rem)] rounded-3xl bg-white px-5 py-2 text-ink shadow-lg md:hidden" aria-label="Mobile">
           <div className="divide-y divide-ink/10 text-sm">
             {links.map((link) => (
               <Link key={link.href} href={link.href} className="block py-3 text-ink" onClick={(event) => onMenuClick(event, link.href)}>
@@ -133,7 +134,7 @@ export function SiteHeader() {
                 {link.label}
               </Link>
             ))}
-            <a href={WHATSAPP_URL} target="_blank" rel="noreferrer" className="block py-3 font-semibold text-orange">
+            <a href={WHATSAPP_URL} target="_blank" rel="noreferrer" className="block py-3 font-semibold text-ink">
               WhatsApp
             </a>
           </div>
