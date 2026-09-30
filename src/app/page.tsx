@@ -12,7 +12,7 @@ import { WHATSAPP_URL } from "@/lib/site";
 export default function HomePage() {
   return (
     <>
-      <section id="planos" className="mx-auto max-w-6xl px-5 pt-28 pb-20 md:pt-32 md:pb-28">
+      <section id="planos" className="mx-auto max-w-6xl px-5 pt-28 pb-20 md:pt-24 md:pb-28">
         <div className="max-w-2xl">
           <p className="text-sm text-ink-soft">Nossos planos</p>
           <h2 className="mt-3 font-display text-4xl tracking-tight md:text-5xl">Escolha o plano e abra só o que importa</h2>
