@@ -57,7 +57,7 @@ export default function AboutPage() {
         <div className="mt-8 grid gap-4 md:grid-cols-3">
           {team.map((person) => (
             <article key={person.name} className="rounded-[1.75rem] bg-paper p-6">
-              <p className="grid h-14 w-14 place-items-center rounded-full bg-amber font-display text-xl" aria-hidden="true">
+              <p className="grid h-14 w-14 place-items-center rounded-full bg-orange font-display text-xl text-cream" aria-hidden="true">
                 {person.name
                   .split(" ")
                   .slice(0, 2)

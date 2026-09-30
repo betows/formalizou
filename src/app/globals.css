@@ -3,13 +3,13 @@
 @theme {
   --font-sans: var(--font-body), "Trebuchet MS", sans-serif;
   --font-display: var(--font-body), "Trebuchet MS", sans-serif;
-  --color-ink: #171717;
-  --color-ink-soft: #5e5a55;
+  --color-ink: #0a4160;
+  --color-ink-soft: #3e5c70;
   --color-cream: #f4f2ee;
   --color-paper: #ede9e6;
   --color-orange: #d76912;
   --color-orange-deep: #b4530c;
-  --color-amber: #fef7af;
+  --color-amber: #f6dcc4;
   --color-line: #e4dfd8;
   --color-moss: #1c7a4a;
 }
@@ -97,8 +97,8 @@ body {
     90deg,
     transparent 0,
     transparent 7.5rem,
-    rgb(23 23 23 / 0.035) 7.5rem,
-    rgb(23 23 23 / 0.035) calc(7.5rem + 1px)
+    rgb(10 65 96 / 0.05) 7.5rem,
+    rgb(10 65 96 / 0.05) calc(7.5rem + 1px)
   );
   color: var(--color-ink);
   font-family: var(--font-sans);
@@ -143,27 +143,27 @@ body {
 }
 
 .hero-btn-solid {
-  background: #171717;
+  background: var(--color-ink);
   color: #fff;
 }
 
 .hero-btn-solid:hover,
 .hero-btn-solid:focus-visible {
-  background: #000;
-  box-shadow: 0 12px 28px -14px rgb(23 23 23 / 0.75);
+  background: #08324a;
+  box-shadow: 0 12px 28px -14px rgb(10 65 96 / 0.75);
   transform: translateY(-1px);
 }
 
 .hero-btn-line {
-  border: 1px solid rgb(23 23 23 / 0.8);
+  border: 1px solid color-mix(in srgb, var(--color-ink) 80%, transparent);
   background: var(--color-cream);
-  color: #171717;
+  color: var(--color-ink);
 }
 
 .hero-btn-line:hover,
 .hero-btn-line:focus-visible {
   background: #fff;
-  border-color: #171717;
+  border-color: var(--color-ink);
   transform: translateY(-1px);
 }
 
@@ -176,11 +176,11 @@ body {
   overflow: hidden;
   border-radius: 9999px;
   background: #fff;
-  color: #171717;
+  color: var(--color-ink);
 }
 
 .hero-btn-line .hero-btn-icon {
-  border: 1px solid rgb(23 23 23 / 0.15);
+  border: 1px solid color-mix(in srgb, var(--color-ink) 15%, transparent);
   transition: border-color 0.45s cubic-bezier(0.22, 0.7, 0.2, 1);
 }
 
@@ -210,8 +210,8 @@ body {
 }
 
 ::selection {
-  background: #fef7af;
-  color: #171717;
+  background: var(--color-orange);
+  color: #fff;
 }
 
 :focus-visible {

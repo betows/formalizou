@@ -30,7 +30,7 @@ export function PlanExplorer() {
             <div className="flex items-center justify-between gap-3">
               <h3 className="font-display text-3xl">{item.name}</h3>
               {item.popular ? (
-                <span className="rounded-full bg-amber px-3 py-1 text-xs font-medium text-ink">Mais escolhido</span>
+                <span className="rounded-full bg-orange px-3 py-1 text-xs font-medium text-cream">Mais escolhido</span>
               ) : null}
             </div>
             <p className="mt-2 text-sm text-ink-soft">
@@ -64,7 +64,7 @@ export function PlanExplorer() {
               {plans.map((item) => (
                 <th
                   key={item.id}
-                  className={`px-4 py-4 font-display text-xl ${item.popular ? "bg-amber text-ink" : "text-ink"}`}
+                  className={`px-4 py-4 font-display text-xl ${item.popular ? "bg-orange text-cream" : "text-ink"}`}
                 >
                   {item.name}
                 </th>
@@ -78,7 +78,7 @@ export function PlanExplorer() {
                 {row.values.map((value, index) => (
                   <td
                     key={`${row.label}-${value}-${index}`}
-                    className={`px-4 py-3.5 ${plans[index]?.popular ? "bg-amber/40" : ""} ${value === "Grátis" ? "font-semibold text-ink" : "text-ink-soft"}`}
+                    className={`px-4 py-3.5 ${plans[index]?.popular ? "bg-orange/10" : ""} ${value === "Grátis" ? "font-semibold text-ink" : "text-ink-soft"}`}
                   >
                     {value}
                   </td>

@@ -19,7 +19,7 @@ export function HowItWorks() {
             onClick={() => setActive(index)}
             className={`rounded-[1.75rem] border p-5 text-left transition duration-300 ${selected ? "border-ink bg-ink text-cream shadow-lg" : "hover-card border-line bg-cream text-ink"}`}
           >
-            <span className={`font-display text-4xl ${selected ? "text-amber" : "text-ink-soft"}`}>
+            <span className={`font-display text-4xl ${selected ? "text-orange" : "text-ink-soft"}`}>
               0{index + 1}
             </span>
             <span className="mt-3 block font-display text-2xl leading-tight">{step.title}</span>

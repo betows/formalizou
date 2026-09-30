@@ -65,7 +65,7 @@ export default function HomePage() {
               <div className="mt-3 flex h-16 items-end gap-1.5">
                 {[
                   ["15", "bg-ink/15", "42%"],
-                  ["25", "bg-amber", "62%"],
+                  ["25", "bg-orange", "62%"],
                   ["60", "bg-ink", "100%"],
                 ].map(([label, color, height]) => (
                   <span key={label} className={`flex-1 rounded-md ${color}`} style={{ height }} />

@@ -5,7 +5,7 @@ export function Logo({ variant = "header" }: { variant?: "header" | "footer" }) 
 
   return (
     <Image
-      src="/brand/logo-mono.png"
+      src="/brand/logo-color.png"
       alt="Formalizou"
       width={1109}
       height={202}
