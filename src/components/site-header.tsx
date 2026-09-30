@@ -50,7 +50,7 @@ export function SiteHeader() {
   return (
     <header className="pointer-events-none fixed top-4 right-0 left-0 z-50 flex flex-col items-center px-3">
       <div className="pointer-events-auto flex h-14 max-w-[calc(100%-0.5rem)] items-center gap-2 rounded-full bg-white px-2 text-ink shadow-[0_1px_20px_#e0d7c680] sm:gap-4 sm:px-3">
-        <Link href="/" aria-label="Formalizou, página inicial" className="flex shrink-0 items-center" onClick={close}>
+        <Link href="/" aria-label="Formalizou, página inicial" className="flex h-full shrink-0 items-center pr-1 pl-2" onClick={close}>
           <Logo />
         </Link>
         <nav className="hidden h-full items-center gap-1 whitespace-nowrap md:flex" aria-label="Principal">

@@ -7,10 +7,10 @@ export function Logo({ variant = "header" }: { variant?: "header" | "footer" }) 
     <Image
       src="/brand/logo-mono.png"
       alt="Formalizou"
-      width={1141}
-      height={footer ? 266 : 218}
+      width={1109}
+      height={202}
       priority={!footer}
-      className={footer ? "h-12 w-auto" : "h-7 w-auto"}
+      className={footer ? "block h-11 w-auto" : "block h-6 w-auto"}
     />
   );
 }
