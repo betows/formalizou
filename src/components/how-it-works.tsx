@@ -17,9 +17,9 @@ export function HowItWorks() {
             type="button"
             aria-pressed={selected}
             onClick={() => setActive(index)}
-            className={`rounded-[1.75rem] border p-5 text-left transition duration-300 hover:-translate-y-0.5 ${selected ? "border-orange bg-ink text-cream shadow-lg" : "border-line bg-cream text-ink hover:border-orange/40"}`}
+            className={`rounded-[1.75rem] border p-5 text-left transition duration-300 ${selected ? "border-ink bg-ink text-cream shadow-lg" : "hover-card border-line bg-cream text-ink"}`}
           >
-            <span className={`font-display text-4xl ${selected ? "text-amber" : "text-orange"}`}>
+            <span className={`font-display text-4xl ${selected ? "text-amber" : "text-ink-soft"}`}>
               0{index + 1}
             </span>
             <span className="mt-3 block font-display text-2xl leading-tight">{step.title}</span>

@@ -18,7 +18,7 @@ export function SiteFooter() {
                 href={social.href}
                 target="_blank"
                 rel="noreferrer"
-                className="rounded-full border border-line px-3 py-1.5 text-ink-soft hover:text-ink"
+                className="rounded-full border border-line px-3 py-1.5 text-ink-soft transition duration-300 hover:bg-white hover:text-ink"
               >
                 {social.label}
               </a>
@@ -33,7 +33,7 @@ export function SiteFooter() {
             <br />
             {SITE.address.line2}
           </p>
-          <a className="mt-3 inline-block text-sm underline" href={`mailto:${SITE.email}`}>
+          <a className="mt-3 inline-block text-sm underline transition duration-300 hover:opacity-60" href={`mailto:${SITE.email}`}>
             {SITE.email}
           </a>
         </div>
@@ -41,37 +41,37 @@ export function SiteFooter() {
           <p className="text-sm text-ink-soft">Mapa</p>
           <ul className="mt-3 grid gap-2 text-sm">
             <li>
-              <Link href="/a-formalizou" className="hover:text-ink-soft">
+              <Link href="/a-formalizou" className="transition duration-300 hover:opacity-60">
                 A Formalizou
               </Link>
             </li>
             <li>
-              <Link href="/planos" className="hover:text-ink-soft">
+              <Link href="/planos" className="transition duration-300 hover:opacity-60">
                 Planos
               </Link>
             </li>
             <li>
-              <Link href="/servicos-avulsos" className="hover:text-ink-soft">
+              <Link href="/servicos-avulsos" className="transition duration-300 hover:opacity-60">
                 Serviços avulsos
               </Link>
             </li>
             <li>
-              <Link href="/faq" className="hover:text-ink-soft">
+              <Link href="/faq" className="transition duration-300 hover:opacity-60">
                 Perguntas frequentes
               </Link>
             </li>
             <li>
-              <Link href="/contato" className="hover:text-ink-soft">
+              <Link href="/contato" className="transition duration-300 hover:opacity-60">
                 Contato
               </Link>
             </li>
             <li>
-              <Link href="/privacidade" className="hover:text-ink-soft">
+              <Link href="/privacidade" className="transition duration-300 hover:opacity-60">
                 Privacidade
               </Link>
             </li>
             <li>
-              <a href={WHATSAPP_URL} target="_blank" rel="noreferrer" className="hover:text-ink-soft">
+              <a href={WHATSAPP_URL} target="_blank" rel="noreferrer" className="transition duration-300 hover:opacity-60">
                 WhatsApp {SITE.phoneDisplay}
               </a>
             </li>

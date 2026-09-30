@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ArrowButton } from "@/components/arrow-button";
 import { ContactForm } from "@/components/contact-form";
 import { PageHero } from "@/components/page-hero";
 import { SITE, WHATSAPP_URL } from "@/lib/site";
@@ -27,9 +28,9 @@ export default function ContactPage() {
           <a className="mt-5 block underline" href={`mailto:${SITE.email}`}>
             {SITE.email}
           </a>
-          <a className="mt-4 inline-flex h-11 items-center rounded-full bg-ink px-4 text-sm font-medium text-cream" href={WHATSAPP_URL}>
+          <ArrowButton href={WHATSAPP_URL} className="mt-4">
             WhatsApp {SITE.phoneDisplay}
-          </a>
+          </ArrowButton>
         </div>
         <div className="rounded-3xl border border-line bg-cream p-6 text-ink">
           <ContactForm variant="full" idPrefix="contato" />

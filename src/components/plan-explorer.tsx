@@ -1,7 +1,7 @@
 "use client";
 
-import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import { ArrowButton } from "@/components/arrow-button";
 import { planRows, plans, type PlanId } from "@/lib/content";
 
 export function PlanExplorer() {
@@ -25,7 +25,7 @@ export function PlanExplorer() {
         {plans.map((item, index) => (
           <article
             key={item.id}
-            className={`flex flex-col rounded-[1.75rem] border border-line bg-cream p-6 text-ink ${index === 2 ? "md:col-span-2 xl:col-span-1" : ""}`}
+            className={`hover-card flex flex-col rounded-[1.75rem] border border-line bg-cream p-6 text-ink ${index === 2 ? "md:col-span-2 xl:col-span-1" : ""}`}
           >
             <div className="flex items-center justify-between gap-3">
               <h3 className="font-display text-3xl">{item.name}</h3>
@@ -48,13 +48,9 @@ export function PlanExplorer() {
                 </li>
               ))}
             </ul>
-            <button
-              type="button"
-              onClick={() => setOpenId(item.id)}
-              className="mt-6 h-11 rounded-full bg-ink px-4 text-sm font-medium text-cream"
-            >
+            <ArrowButton className="mt-6 w-full justify-between" onClick={() => setOpenId(item.id)}>
               Saiba mais
-            </button>
+            </ArrowButton>
           </article>
         ))}
       </div>
@@ -68,7 +64,7 @@ export function PlanExplorer() {
               {plans.map((item) => (
                 <th
                   key={item.id}
-                  className={`px-4 py-4 font-display text-xl ${item.popular ? "bg-orange/10 text-orange-deep" : "text-ink"}`}
+                  className={`px-4 py-4 font-display text-xl ${item.popular ? "bg-amber text-ink" : "text-ink"}`}
                 >
                   {item.name}
                 </th>
@@ -82,7 +78,7 @@ export function PlanExplorer() {
                 {row.values.map((value, index) => (
                   <td
                     key={`${row.label}-${value}-${index}`}
-                    className={`px-4 py-3.5 ${plans[index]?.popular ? "bg-orange/5" : ""} ${value === "Grátis" ? "font-semibold text-moss" : "text-ink-soft"}`}
+                    className={`px-4 py-3.5 ${plans[index]?.popular ? "bg-amber/40" : ""} ${value === "Grátis" ? "font-semibold text-ink" : "text-ink-soft"}`}
                   >
                     {value}
                   </td>
@@ -105,7 +101,7 @@ export function PlanExplorer() {
           <div className="p-6">
             <div className="flex items-start justify-between gap-4">
               <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.12em] text-orange">Plano</p>
+                <p className="text-xs font-medium uppercase tracking-[0.14em] text-ink-soft">Plano</p>
                 <h2 className="font-display text-4xl">{plan.name}</h2>
                 <p className="mt-1 text-ink-soft">
                   Ideal para {plan.audience.charAt(0).toLowerCase() + plan.audience.slice(1)}
@@ -113,7 +109,7 @@ export function PlanExplorer() {
               </div>
               <button
                 type="button"
-                className="grid h-10 w-10 place-items-center rounded-full border border-line text-xl"
+                className="grid h-10 w-10 place-items-center rounded-full border border-line text-xl transition duration-300 hover:bg-ink hover:text-cream"
                 onClick={close}
                 aria-label="Fechar detalhes do plano"
               >
@@ -128,13 +124,9 @@ export function PlanExplorer() {
               ))}
             </ul>
             <p className="mt-4 text-sm text-ink-soft">* {plan.note}</p>
-            <Link
-              href="/contato"
-              className="mt-5 inline-flex rounded-full bg-orange px-5 py-3 text-sm font-semibold text-cream"
-              onClick={close}
-            >
+            <ArrowButton href="/contato" className="mt-5" onClick={close}>
               Quero este plano
-            </Link>
+            </ArrowButton>
           </div>
         ) : null}
       </dialog>

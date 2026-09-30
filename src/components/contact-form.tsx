@@ -1,6 +1,7 @@
 "use client";
 
 import { useId, useState, type FormEvent, type ReactNode } from "react";
+import { ArrowButton } from "@/components/arrow-button";
 import { SERVICE_OPTIONS, STATES, whatsappLink } from "@/lib/site";
 
 type Variant = "compact" | "full";
@@ -91,14 +92,9 @@ export function ContactForm({
         <p className="mt-2 text-sm leading-relaxed text-ink-soft">
           Abrimos o WhatsApp com os seus dados. Se a janela não apareceu, use o botão abaixo.
         </p>
-        <a
-          href={link}
-          target="_blank"
-          rel="noreferrer"
-          className="mt-4 inline-flex rounded-full bg-orange px-5 py-3 text-sm font-semibold text-cream"
-        >
+        <ArrowButton href={link} className="mt-4">
           Continuar no WhatsApp
-        </a>
+        </ArrowButton>
         <button
           type="button"
           className="mt-3 block text-sm text-ink-soft underline"
@@ -204,12 +200,9 @@ export function ContactForm({
           </Field>
         </>
       ) : null}
-      <button
-        type="submit"
-        className={`mt-1 rounded-full bg-ink px-4 text-sm font-medium text-cream transition hover:bg-black ${compact ? "py-2.5" : "py-3.5"}`}
-      >
+      <ArrowButton type="submit" className="mt-1 w-full justify-between">
         {variant === "compact" ? "Solicitar contato" : "Chamar no WhatsApp"}
-      </button>
+      </ArrowButton>
     </form>
   );
 }
@@ -231,7 +224,7 @@ function Field({
     <label htmlFor={id} className={`grid text-sm ${compact ? "gap-1" : "gap-1.5"}`}>
       <span className="font-medium">{label}</span>
       {children}
-      {error ? <span className="text-xs text-orange-deep">{error}</span> : null}
+      {error ? <span className="text-xs font-medium text-ink">{error}</span> : null}
     </label>
   );
 }

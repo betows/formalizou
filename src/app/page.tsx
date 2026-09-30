@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Accordion } from "@/components/accordion";
+import { ArrowButton } from "@/components/arrow-button";
 import { ContactForm } from "@/components/contact-form";
 import { FeatureSwitch } from "@/components/feature-switch";
 import { PlanExplorer } from "@/components/plan-explorer";
@@ -7,27 +8,6 @@ import { Reveal } from "@/components/reveal";
 import { Testimonials } from "@/components/testimonials";
 import { homeFaq, steps } from "@/lib/content";
 import { WHATSAPP_URL } from "@/lib/site";
-
-function ArrowIcon() {
-  return (
-    <span className="hero-btn-icon" aria-hidden="true">
-      <span className="hero-btn-arrow">
-        <Arrow />
-      </span>
-      <span className="hero-btn-arrow">
-        <Arrow />
-      </span>
-    </span>
-  );
-}
-
-function Arrow() {
-  return (
-    <svg viewBox="0 0 16 16" className="h-4 w-4" fill="none">
-      <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  );
-}
 
 export default function HomePage() {
   return (
@@ -42,14 +22,10 @@ export default function HomePage() {
               Deixe a gestão contábil e financeira da sua empresa com a gente e ganhe tempo para focar nas suas atividades.
             </p>
             <div className="rise-in d2 mt-8 flex flex-wrap gap-3">
-              <a href="#contato" className="hero-btn hero-btn-solid">
-                Solicitar contato
-                <ArrowIcon />
-              </a>
-              <a href={WHATSAPP_URL} target="_blank" rel="noreferrer" className="hero-btn hero-btn-line">
+              <ArrowButton href="#contato">Solicitar contato</ArrowButton>
+              <ArrowButton href={WHATSAPP_URL} variant="line">
                 WhatsApp
-                <ArrowIcon />
-              </a>
+              </ArrowButton>
             </div>
           </div>
           <div className="from-right relative mx-auto w-full max-w-md pb-10">
@@ -116,7 +92,7 @@ export default function HomePage() {
         </div>
         <div className="rise-in d4 mt-16 grid gap-px overflow-hidden rounded-[1.75rem] border border-line bg-line sm:grid-cols-3">
           {steps.map((step, index) => (
-            <article key={step.title} className="bg-cream p-6">
+            <article key={step.title} className="step-card bg-cream p-6">
               <p className="font-display text-sm text-ink-soft">0{index + 1}</p>
               <h2 className="mt-4 font-display text-2xl tracking-tight">{step.title}</h2>
               <p className="mt-2 text-sm leading-relaxed text-ink-soft">{step.text}</p>
@@ -173,9 +149,9 @@ export default function HomePage() {
           <p className="mt-4 text-ink-soft">
             Clique em uma pergunta para ler a resposta. Clique de novo para fechar. As outras permanecem fechadas.
           </p>
-          <Link href="/faq" className="mt-6 inline-flex h-11 items-center rounded-full bg-ink px-5 text-sm font-medium text-cream">
+          <ArrowButton href="/faq" className="mt-6">
             Acesse o FAQ completo
-          </Link>
+          </ArrowButton>
         </div>
         <Accordion items={homeFaq} />
       </Reveal>

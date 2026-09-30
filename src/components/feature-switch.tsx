@@ -43,14 +43,14 @@ export function FeatureSwitch() {
                 type="button"
                 aria-pressed={selected}
                 onClick={() => setActive(index)}
-                className={`rounded-full px-4 py-2 text-sm transition ${selected ? "bg-ink text-cream" : "bg-paper text-ink hover:bg-ink/5"}`}
+                className={`rounded-full px-4 py-2 text-sm transition duration-300 ${selected ? "bg-ink text-cream" : "bg-white text-ink hover:bg-amber"}`}
               >
                 {item.title}
               </button>
             );
           })}
         </div>
-        <div className="mt-5 min-h-52 rounded-[1.75rem] bg-paper p-7">
+        <div key={current.title} className="swap-in mt-5 min-h-52 rounded-[1.75rem] bg-paper p-7">
           <p className="font-display text-3xl tracking-tight">{current.title}</p>
           <p className="mt-4 max-w-xl leading-relaxed text-ink-soft">{current.text}</p>
         </div>

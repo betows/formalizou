@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, type MouseEvent } from "react";
+import { ArrowButton } from "@/components/arrow-button";
 import { Logo } from "@/components/logo";
 import { WHATSAPP_URL } from "@/lib/site";
 
@@ -96,20 +97,14 @@ export function SiteHeader() {
           </Link>
         </nav>
         <div className="flex items-center gap-3">
-          <a
-            href={WHATSAPP_URL}
-            target="_blank"
-            rel="noreferrer"
-            className="hidden h-10 items-center gap-2 rounded-full bg-ink pr-1 pl-4 text-sm font-medium text-white sm:inline-flex"
-          >
-            WhatsApp
-            <span className="grid h-8 w-8 place-items-center rounded-full bg-white text-ink" aria-hidden="true">
-              →
-            </span>
-          </a>
+          <span className="hidden sm:inline-flex">
+            <ArrowButton href={WHATSAPP_URL} className="hero-btn-sm">
+              WhatsApp
+            </ArrowButton>
+          </span>
           <button
             type="button"
-            className="grid h-10 w-10 place-items-center rounded-full md:hidden"
+            className="grid h-10 w-10 place-items-center rounded-full transition duration-300 hover:bg-paper md:hidden"
             aria-expanded={open}
             aria-controls="menu-mobile"
             onClick={() => setOpen((value) => !value)}

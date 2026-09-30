@@ -43,7 +43,7 @@ export function FaqBrowser() {
                   setCategoryId(category.id);
                   setQuery("");
                 }}
-                className={`rounded-xl px-3 py-2 text-left text-sm ${selected ? "bg-ink text-cream" : "bg-cream text-ink hover:bg-white"}`}
+                className={`rounded-xl px-3 py-2 text-left text-sm transition duration-300 ${selected ? "bg-ink text-cream" : "bg-cream text-ink hover:bg-amber"}`}
               >
                 {category.label}
               </button>

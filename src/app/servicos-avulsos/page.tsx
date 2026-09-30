@@ -29,7 +29,7 @@ export default function ExtrasPage() {
                       <p className="font-medium">{item.name}</p>
                       <p className="text-sm text-ink-soft">{item.detail}</p>
                     </div>
-                    <p className="font-display text-xl text-orange-deep sm:text-right">{item.price}</p>
+                    <p className="font-display text-xl text-ink sm:text-right">{item.price}</p>
                   </li>
                 ))}
               </ul>

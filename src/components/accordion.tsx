@@ -34,14 +34,16 @@ export function Accordion({
                 aria-expanded={open}
                 aria-controls={panelId}
                 onClick={() => setOpenId(open ? null : item.id)}
-                className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left transition-colors hover:bg-paper/80"
+                className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left transition duration-500 hover:bg-white"
               >
                 <span className="font-medium text-ink">{item.question}</span>
                 <span
-                  className={`grid h-8 w-8 shrink-0 place-items-center rounded-full border border-line text-orange transition-transform ${open ? "rotate-45 bg-orange text-cream" : "bg-paper"}`}
+                  className={`grid h-6 w-6 shrink-0 place-items-center text-ink transition-transform duration-300 ${open ? "rotate-45" : ""}`}
                   aria-hidden="true"
                 >
-                  +
+                  <svg viewBox="0 0 16 16" className="h-4 w-4" fill="none">
+                    <path d="M8 2.5v11M2.5 8h11" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+                  </svg>
                 </span>
               </button>
             </h3>

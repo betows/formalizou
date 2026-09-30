@@ -35,7 +35,7 @@ export function CookieNotice() {
         </p>
         <button
           type="button"
-          className="shrink-0 rounded-full bg-ink px-4 py-2 text-sm font-semibold text-cream"
+          className="shrink-0 rounded-full bg-ink px-4 py-2 text-sm font-semibold text-cream transition duration-300 hover:opacity-90"
           onClick={() => {
             try {
               localStorage.setItem(KEY, "ok");
