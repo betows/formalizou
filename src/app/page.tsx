@@ -12,7 +12,36 @@ import { WHATSAPP_URL } from "@/lib/site";
 export default function HomePage() {
   return (
     <>
-      <section className="mx-auto max-w-6xl px-5 pt-28 pb-10 md:pt-32">
+      <section id="planos" className="mx-auto max-w-6xl px-5 pt-24 pb-20 md:pb-28">
+        <div className="max-w-2xl">
+          <p className="text-sm text-ink-soft">Nossos planos</p>
+          <h2 className="mt-2 font-display text-4xl tracking-tight md:mt-3 md:text-5xl">Escolha o plano e abra só o que importa</h2>
+          <p className="mt-3 text-lg text-ink-soft md:mt-4">
+            Especialistas cuidam da contabilidade com atendimento humano. O comparativo fica aberto. Os detalhes de cada plano abrem um de cada vez.
+          </p>
+        </div>
+        <div className="mt-6 md:mt-10">
+          <PlanExplorer />
+        </div>
+        <p className="mt-6 text-sm text-ink-soft">
+          Precisa de algo fora da mensalidade?{" "}
+          <Link href="/servicos-avulsos" className="font-medium text-ink underline">
+            Veja os serviços avulsos
+          </Link>
+          .
+        </p>
+      </section>
+
+      <Reveal id="sobre" className="border-y border-line bg-paper">
+        <div className="mx-auto max-w-6xl px-5 py-20 md:py-28">
+          <FeatureSwitch />
+          <Link href="/a-formalizou" className="mt-8 inline-flex text-sm font-medium underline">
+            Conheça a história e a equipe
+          </Link>
+        </div>
+      </Reveal>
+
+      <section className="mx-auto max-w-6xl px-5 pt-16 pb-10 md:pt-20">
         <div className="grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
           <div className="from-left">
             <h1 className="rise-in font-display text-5xl leading-[1.02] tracking-tight md:text-6xl">
@@ -100,35 +129,6 @@ export default function HomePage() {
           ))}
         </div>
       </section>
-
-      <Reveal id="sobre" className="border-y border-line bg-paper">
-        <div className="mx-auto max-w-6xl px-5 py-20 md:py-28">
-          <FeatureSwitch />
-          <Link href="/a-formalizou" className="mt-8 inline-flex text-sm font-medium underline">
-            Conheça a história e a equipe
-          </Link>
-        </div>
-      </Reveal>
-
-      <Reveal id="planos" className="mx-auto max-w-6xl px-5 py-20 md:py-28">
-        <div className="max-w-2xl">
-          <p className="text-sm text-ink-soft">Nossos planos</p>
-          <h2 className="mt-3 font-display text-4xl tracking-tight md:text-5xl">Escolha o plano e abra só o que importa</h2>
-          <p className="mt-4 text-lg text-ink-soft">
-            Especialistas cuidam da contabilidade com atendimento humano. O comparativo fica aberto. Os detalhes de cada plano abrem um de cada vez.
-          </p>
-        </div>
-        <div className="mt-10">
-          <PlanExplorer />
-        </div>
-        <p className="mt-6 text-sm text-ink-soft">
-          Precisa de algo fora da mensalidade?{" "}
-          <Link href="/servicos-avulsos" className="font-medium text-ink underline">
-            Veja os serviços avulsos
-          </Link>
-          .
-        </p>
-      </Reveal>
 
       <Reveal id="clientes" className="border-y border-line bg-paper py-20 md:py-28">
         <div className="mx-auto max-w-6xl px-5">
