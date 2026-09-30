@@ -127,18 +127,6 @@ dialog.plan-dialog {
   animation: accent-grow 0.55s 0.12s ease both;
 }
 
-@keyframes brand-orbit {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.brand-orbit {
-  animation: brand-orbit 48s linear infinite;
-}
 
 @media (prefers-reduced-motion: reduce) {
   html {
@@ -155,10 +143,6 @@ dialog.plan-dialog {
     opacity: 1;
     transform: none;
     transition: none;
-  }
-
-  .brand-orbit {
-    animation: none;
   }
 
   .acc-panel {

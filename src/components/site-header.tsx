@@ -19,7 +19,7 @@ const serviceLinks = [
 ];
 
 function navClass(active: boolean) {
-  return `border-b-2 pb-0.5 text-sm ${active ? "border-orange text-cream" : "border-transparent text-cream/75 hover:text-cream"}`;
+  return `inline-flex h-10 items-center border-b-2 text-sm leading-none ${active ? "border-orange text-cream" : "border-transparent text-cream/75 hover:text-cream"}`;
 }
 
 export function SiteHeader() {
@@ -50,27 +50,27 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-40 border-b border-white/10 bg-ink/95 text-cream backdrop-blur">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-5">
-        <Link href="/" aria-label="Formalizou, página inicial" onClick={close}>
+        <Link href="/" aria-label="Formalizou, página inicial" className="flex shrink-0 items-center" onClick={close}>
           <Logo />
         </Link>
-        <nav className="hidden items-center gap-4 xl:gap-6 lg:flex" aria-label="Principal">
+        <nav className="hidden h-full items-center gap-4 whitespace-nowrap lg:flex xl:gap-6" aria-label="Principal">
           <Link href="/#sobre" className={navClass(pathname === "/a-formalizou")} onClick={(event) => onMenuClick(event, "/#sobre")}>
             A Formalizou
           </Link>
           <div
-            className="relative"
+            className="relative flex items-center"
             onMouseEnter={() => setServicesOpen(true)}
             onMouseLeave={() => setServicesOpen(false)}
           >
             <button
               type="button"
-              className={navClass(servicesActive)}
+              className={`${navClass(servicesActive)} gap-1`}
               aria-expanded={servicesOpen}
               aria-controls="menu-servicos"
               onClick={() => setServicesOpen((value) => !value)}
             >
               Serviços
-              <span className={`ml-1 inline-block text-[0.6rem] ${servicesOpen ? "rotate-180" : ""}`} aria-hidden="true">
+              <span className={`text-[0.65rem] leading-none ${servicesOpen ? "rotate-180" : ""}`} aria-hidden="true">
                 ▾
               </span>
             </button>
