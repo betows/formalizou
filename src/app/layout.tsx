@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Nunito, Outfit } from "next/font/google";
+import { Albert_Sans } from "next/font/google";
 import { CookieNotice } from "@/components/cookie-notice";
 import { HashScroll } from "@/components/hash-scroll";
 import { SiteFooter } from "@/components/site-footer";
@@ -7,17 +7,10 @@ import { SiteHeader } from "@/components/site-header";
 import { WhatsAppButton } from "@/components/whatsapp-button";
 import "./globals.css";
 
-const outfit = Outfit({
+const albert = Albert_Sans({
   subsets: ["latin"],
   weight: ["400", "500", "600"],
   variable: "--font-body",
-  display: "swap",
-});
-
-const nunito = Nunito({
-  subsets: ["latin"],
-  weight: ["700", "800"],
-  variable: "--font-display-face",
   display: "swap",
 });
 
@@ -32,7 +25,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="pt-BR" className={`${outfit.variable} ${nunito.variable} h-full antialiased`}>
+    <html lang="pt-BR" className={`${albert.variable} h-full antialiased`}>
       <body className="min-h-full">
         <a
           href="#conteudo"

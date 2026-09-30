@@ -25,25 +25,25 @@ export function PlanExplorer() {
         {plans.map((item, index) => (
           <article
             key={item.id}
-            className={`flex flex-col rounded-3xl border p-5 sm:p-6 ${index === 2 ? "md:col-span-2 xl:col-span-1" : ""} ${item.popular ? "border-orange bg-ink text-cream shadow-[0_24px_50px_-28px_rgba(215,105,18,0.7)]" : "border-line bg-cream text-ink"}`}
+            className={`flex flex-col rounded-[1.75rem] border border-line bg-cream p-6 text-ink ${index === 2 ? "md:col-span-2 xl:col-span-1" : ""}`}
           >
             <div className="flex items-center justify-between gap-3">
               <h3 className="font-display text-3xl">{item.name}</h3>
               {item.popular ? (
-                <span className="rounded-full bg-orange px-3 py-1 text-xs font-semibold uppercase tracking-wide text-cream">
-                  Mais escolhido
-                </span>
+                <span className="rounded-full bg-amber px-3 py-1 text-xs font-medium text-ink">Mais escolhido</span>
               ) : null}
             </div>
-            <p className={`mt-2 text-sm ${item.popular ? "text-cream/70" : "text-ink-soft"}`}>
+            <p className="mt-2 text-sm text-ink-soft">
               Ideal para {item.audience.charAt(0).toLowerCase() + item.audience.slice(1)}
             </p>
+            <p className="mt-5 font-display text-3xl tracking-tight">
+              {planRows.find((row) => row.label === "Faturamento mensal")?.values[index]}
+            </p>
+            <p className="text-sm text-ink-soft">de faturamento mensal</p>
             <ul className="mt-5 grid flex-1 gap-2 text-sm">
               {item.highlights.slice(0, 4).map((highlight) => (
                 <li key={highlight} className="flex gap-2">
-                  <span className="text-orange" aria-hidden="true">
-                    ●
-                  </span>
+                  <span aria-hidden="true">–</span>
                   <span>{highlight}</span>
                 </li>
               ))}
@@ -51,7 +51,7 @@ export function PlanExplorer() {
             <button
               type="button"
               onClick={() => setOpenId(item.id)}
-              className={`mt-6 rounded-full px-4 py-2.5 text-sm font-semibold ${item.popular ? "bg-cream text-ink" : "bg-ink text-cream"}`}
+              className="mt-6 h-11 rounded-full bg-ink px-4 text-sm font-medium text-cream"
             >
               Saiba mais
             </button>

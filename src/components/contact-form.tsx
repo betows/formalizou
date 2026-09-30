@@ -206,7 +206,7 @@ export function ContactForm({
       ) : null}
       <button
         type="submit"
-        className={`mt-1 rounded-xl bg-orange px-4 text-sm font-semibold tracking-wide text-cream transition hover:bg-orange-deep ${compact ? "py-2.5" : "py-3.5"}`}
+        className={`mt-1 rounded-full bg-ink px-4 text-sm font-medium text-cream transition hover:bg-black ${compact ? "py-2.5" : "py-3.5"}`}
       >
         {variant === "compact" ? "Solicitar contato" : "Chamar no WhatsApp"}
       </button>

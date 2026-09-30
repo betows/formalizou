@@ -17,17 +17,17 @@ export default function ContactPage() {
         lede="Conte a cidade, o tipo de empresa e o que você precisa. A mensagem abre no WhatsApp da equipe, pronta para enviar."
       />
       <section className="mx-auto grid max-w-6xl gap-8 px-5 py-16 lg:grid-cols-[0.8fr_1.2fr]">
-        <div className="rounded-3xl bg-ink p-6 text-cream">
-          <p className="text-xs font-semibold uppercase tracking-[0.12em] text-amber">Florianópolis</p>
+        <div className="rounded-[1.75rem] bg-paper p-6">
+          <p className="text-sm text-ink-soft">Florianópolis</p>
           <p className="mt-3 font-display text-3xl leading-tight">
             {SITE.address.line1}
             <br />
             {SITE.address.line2}
           </p>
-          <a className="mt-5 block text-cream underline" href={`mailto:${SITE.email}`}>
+          <a className="mt-5 block underline" href={`mailto:${SITE.email}`}>
             {SITE.email}
           </a>
-          <a className="mt-3 inline-flex rounded-full bg-orange px-4 py-2 text-sm font-semibold" href={WHATSAPP_URL}>
+          <a className="mt-4 inline-flex h-11 items-center rounded-full bg-ink px-4 text-sm font-medium text-cream" href={WHATSAPP_URL}>
             WhatsApp {SITE.phoneDisplay}
           </a>
         </div>

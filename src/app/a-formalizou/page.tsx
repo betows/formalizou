@@ -56,8 +56,8 @@ export default function AboutPage() {
         </p>
         <div className="mt-8 grid gap-4 md:grid-cols-3">
           {team.map((person) => (
-            <article key={person.name} className="rounded-3xl bg-ink p-6 text-cream">
-              <p className="grid h-14 w-14 place-items-center rounded-full bg-orange font-display text-xl" aria-hidden="true">
+            <article key={person.name} className="rounded-[1.75rem] bg-paper p-6">
+              <p className="grid h-14 w-14 place-items-center rounded-full bg-amber font-display text-xl" aria-hidden="true">
                 {person.name
                   .split(" ")
                   .slice(0, 2)
@@ -65,8 +65,8 @@ export default function AboutPage() {
                   .join("")}
               </p>
               <h3 className="mt-4 font-display text-3xl">{person.name}</h3>
-              <p className="text-sm text-amber">{person.role}</p>
-              <p className="mt-3 text-sm leading-relaxed text-cream/75">{person.bio}</p>
+              <p className="text-sm text-ink-soft">{person.role}</p>
+              <p className="mt-3 text-sm leading-relaxed text-ink-soft">{person.bio}</p>
             </article>
           ))}
         </div>
