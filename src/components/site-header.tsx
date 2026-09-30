@@ -19,7 +19,7 @@ const serviceLinks = [
 ];
 
 function navClass(active: boolean) {
-  return `inline-flex h-10 items-center border-b-2 text-sm leading-none ${active ? "border-orange text-cream" : "border-transparent text-cream/75 hover:text-cream"}`;
+  return `inline-flex h-10 items-center rounded-full px-3 text-sm leading-none transition ${active ? "bg-ink/10 text-ink" : "text-ink/70 hover:bg-ink/5 hover:text-ink"}`;
 }
 
 export function SiteHeader() {
@@ -48,12 +48,12 @@ export function SiteHeader() {
   }
 
   return (
-    <header className="sticky top-0 z-40 border-b border-white/10 bg-ink/95 text-cream backdrop-blur">
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-5">
+    <header className="fixed top-3 right-0 left-0 z-50 px-3 sm:top-4 sm:px-4">
+      <div className="mx-auto flex h-14 max-w-6xl items-center justify-between gap-3 rounded-full bg-cream px-3 text-ink shadow-sm sm:px-4">
         <Link href="/" aria-label="Formalizou, página inicial" className="flex shrink-0 items-center" onClick={close}>
           <Logo />
         </Link>
-        <nav className="hidden h-full items-center gap-4 whitespace-nowrap lg:flex xl:gap-6" aria-label="Principal">
+        <nav className="hidden h-full items-center gap-1 whitespace-nowrap lg:flex" aria-label="Principal">
           <Link href="/#sobre" className={navClass(pathname === "/a-formalizou")} onClick={(event) => onMenuClick(event, "/#sobre")}>
             A Formalizou
           </Link>
@@ -102,13 +102,13 @@ export function SiteHeader() {
             href={WHATSAPP_URL}
             target="_blank"
             rel="noreferrer"
-            className="hidden rounded-full bg-orange px-3.5 py-1.5 text-sm font-semibold text-cream hover:bg-orange-deep sm:inline-flex"
+            className="hidden h-10 items-center rounded-full bg-orange px-4 text-sm font-semibold text-cream transition hover:bg-orange-deep sm:inline-flex"
           >
             WhatsApp
           </a>
           <button
             type="button"
-            className="grid h-10 w-10 place-items-center rounded-full border border-white/15 lg:hidden"
+            className="grid h-10 w-10 place-items-center rounded-full border border-ink/10 lg:hidden"
             aria-expanded={open}
             aria-controls="menu-mobile"
             onClick={() => setOpen((value) => !value)}
@@ -121,15 +121,15 @@ export function SiteHeader() {
         </div>
       </div>
       {open ? (
-        <nav id="menu-mobile" className="border-t border-white/10 px-5 py-2 lg:hidden" aria-label="Mobile">
-          <div className="divide-y divide-white/10 text-sm">
+        <nav id="menu-mobile" className="mx-auto mt-2 max-w-6xl rounded-3xl bg-cream px-5 py-2 text-ink shadow-lg lg:hidden" aria-label="Mobile">
+          <div className="divide-y divide-ink/10 text-sm">
             {links.map((link) => (
-              <Link key={link.href} href={link.href} className="block py-3 text-cream/90" onClick={(event) => onMenuClick(event, link.href)}>
+              <Link key={link.href} href={link.href} className="block py-3 text-ink" onClick={(event) => onMenuClick(event, link.href)}>
                 {link.label}
               </Link>
             ))}
             {serviceLinks.map((link) => (
-              <Link key={link.href} href={link.href} className="block py-3 pl-3 text-cream/70" onClick={(event) => onMenuClick(event, link.href)}>
+              <Link key={link.href} href={link.href} className="block py-3 pl-3 text-ink/70" onClick={(event) => onMenuClick(event, link.href)}>
                 {link.label}
               </Link>
             ))}

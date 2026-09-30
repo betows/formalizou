@@ -17,7 +17,7 @@ export function HowItWorks() {
             type="button"
             aria-pressed={selected}
             onClick={() => setActive(index)}
-            className={`rounded-3xl border p-5 text-left transition ${selected ? "border-orange bg-ink text-cream" : "border-line bg-cream text-ink hover:border-orange/40"}`}
+            className={`rounded-[1.75rem] border p-5 text-left transition duration-300 hover:-translate-y-0.5 ${selected ? "border-orange bg-ink text-cream shadow-lg" : "border-line bg-cream text-ink hover:border-orange/40"}`}
           >
             <span className={`font-display text-4xl ${selected ? "text-amber" : "text-orange"}`}>
               0{index + 1}

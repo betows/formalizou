@@ -8,7 +8,7 @@ export function Testimonials() {
   const current = testimonials[active] ?? testimonials[0];
 
   return (
-    <div className="grid gap-6 lg:grid-cols-[1.4fr_0.8fr]">
+    <div className="grid items-stretch gap-6 lg:grid-cols-[1.4fr_0.8fr]">
       <figure className="rounded-[2rem] bg-ink p-7 text-cream md:p-10">
         <blockquote className="font-display text-2xl leading-snug md:text-4xl">“{current.quote}”</blockquote>
         <figcaption className="mt-8">
