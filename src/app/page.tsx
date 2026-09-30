@@ -12,15 +12,15 @@ import { WHATSAPP_URL } from "@/lib/site";
 export default function HomePage() {
   return (
     <>
-      <section id="planos" className="mx-auto max-w-6xl px-5 pt-28 pb-20 md:pt-24 md:pb-28">
+      <section id="planos" className="mx-auto max-w-6xl px-5 pt-24 pb-20 md:pb-28">
         <div className="max-w-2xl">
           <p className="text-sm text-ink-soft">Nossos planos</p>
-          <h2 className="mt-3 font-display text-4xl tracking-tight md:text-5xl">Escolha o plano e abra só o que importa</h2>
-          <p className="mt-4 text-lg text-ink-soft">
+          <h2 className="mt-2 font-display text-4xl tracking-tight md:mt-3 md:text-5xl">Escolha o plano e abra só o que importa</h2>
+          <p className="mt-3 text-lg text-ink-soft md:mt-4">
             Especialistas cuidam da contabilidade com atendimento humano. O comparativo fica aberto. Os detalhes de cada plano abrem um de cada vez.
           </p>
         </div>
-        <div className="mt-10">
+        <div className="mt-6 md:mt-10">
           <PlanExplorer />
         </div>
         <p className="mt-6 text-sm text-ink-soft">
