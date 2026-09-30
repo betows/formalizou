@@ -8,6 +8,27 @@ import { Testimonials } from "@/components/testimonials";
 import { homeFaq, steps } from "@/lib/content";
 import { WHATSAPP_URL } from "@/lib/site";
 
+function ArrowIcon() {
+  return (
+    <span className="hero-btn-icon" aria-hidden="true">
+      <span className="hero-btn-arrow">
+        <Arrow />
+      </span>
+      <span className="hero-btn-arrow">
+        <Arrow />
+      </span>
+    </span>
+  );
+}
+
+function Arrow() {
+  return (
+    <svg viewBox="0 0 16 16" className="h-4 w-4" fill="none">
+      <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
 export default function HomePage() {
   return (
     <>
@@ -21,22 +42,13 @@ export default function HomePage() {
               Deixe a gestão contábil e financeira da sua empresa com a gente e ganhe tempo para focar nas suas atividades.
             </p>
             <div className="rise-in d2 mt-8 flex flex-wrap gap-3">
-              <a href="#contato" className="inline-flex h-12 items-center gap-3 rounded-full bg-ink pr-1.5 pl-5 text-sm font-medium text-white">
+              <a href="#contato" className="hero-btn hero-btn-solid">
                 Solicitar contato
-                <span className="grid h-9 w-9 place-items-center rounded-full bg-white text-ink" aria-hidden="true">
-                  →
-                </span>
+                <ArrowIcon />
               </a>
-              <a
-                href={WHATSAPP_URL}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex h-12 items-center gap-3 rounded-full border border-ink/80 bg-cream pr-1.5 pl-5 text-sm font-medium"
-              >
+              <a href={WHATSAPP_URL} target="_blank" rel="noreferrer" className="hero-btn hero-btn-line">
                 WhatsApp
-                <span className="grid h-9 w-9 place-items-center rounded-full border border-ink/15 bg-white" aria-hidden="true">
-                  →
-                </span>
+                <ArrowIcon />
               </a>
             </div>
           </div>

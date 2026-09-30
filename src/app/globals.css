@@ -126,6 +126,89 @@ body {
   animation: card-float 7s ease-in-out infinite;
 }
 
+.hero-btn {
+  display: inline-flex;
+  height: 3rem;
+  align-items: center;
+  gap: 0.75rem;
+  border-radius: 9999px;
+  padding: 0.375rem 0.375rem 0.375rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition:
+    background-color 0.45s cubic-bezier(0.22, 0.7, 0.2, 1),
+    border-color 0.45s cubic-bezier(0.22, 0.7, 0.2, 1),
+    box-shadow 0.45s cubic-bezier(0.22, 0.7, 0.2, 1),
+    transform 0.45s cubic-bezier(0.22, 0.7, 0.2, 1);
+}
+
+.hero-btn-solid {
+  background: #171717;
+  color: #fff;
+}
+
+.hero-btn-solid:hover,
+.hero-btn-solid:focus-visible {
+  background: #000;
+  box-shadow: 0 12px 28px -14px rgb(23 23 23 / 0.75);
+  transform: translateY(-1px);
+}
+
+.hero-btn-line {
+  border: 1px solid rgb(23 23 23 / 0.8);
+  background: var(--color-cream);
+  color: #171717;
+}
+
+.hero-btn-line:hover,
+.hero-btn-line:focus-visible {
+  background: #fff;
+  border-color: #171717;
+  transform: translateY(-1px);
+}
+
+.hero-btn-icon {
+  position: relative;
+  display: grid;
+  height: 2.25rem;
+  width: 2.25rem;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 9999px;
+  background: #fff;
+  color: #171717;
+}
+
+.hero-btn-line .hero-btn-icon {
+  border: 1px solid rgb(23 23 23 / 0.15);
+  transition: border-color 0.45s cubic-bezier(0.22, 0.7, 0.2, 1);
+}
+
+.hero-btn-line:hover .hero-btn-icon,
+.hero-btn-line:focus-visible .hero-btn-icon {
+  border-color: transparent;
+}
+
+.hero-btn-arrow {
+  grid-area: 1 / 1;
+  display: grid;
+  transition: transform 0.55s cubic-bezier(0.22, 0.7, 0.2, 1);
+}
+
+.hero-btn-arrow + .hero-btn-arrow {
+  transform: translateX(-150%);
+}
+
+.hero-btn:hover .hero-btn-arrow:first-child,
+.hero-btn:focus-visible .hero-btn-arrow:first-child {
+  transform: translateX(150%);
+}
+
+.hero-btn:hover .hero-btn-arrow + .hero-btn-arrow,
+.hero-btn:focus-visible .hero-btn-arrow + .hero-btn-arrow {
+  transform: translateX(0);
+}
+
 ::selection {
   background: #fef7af;
   color: #171717;
@@ -225,7 +308,15 @@ dialog.plan-dialog {
     transition: none;
   }
 
-  .acc-panel {
+  .acc-panel,
+  .hero-btn,
+  .hero-btn-arrow,
+  .hero-btn-icon {
     transition: none;
+  }
+
+  .hero-btn:hover,
+  .hero-btn:focus-visible {
+    transform: none;
   }
 }
