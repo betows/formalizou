@@ -101,15 +101,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      <Reveal id="sobre" className="border-y border-line bg-paper">
-        <div className="mx-auto max-w-6xl px-5 py-20 md:py-28">
-          <FeatureSwitch />
-          <Link href="/a-formalizou" className="mt-8 inline-flex text-sm font-medium underline">
-            Conheça a história e a equipe
-          </Link>
-        </div>
-      </Reveal>
-
       <Reveal id="planos" className="mx-auto max-w-6xl px-5 py-20 md:py-28">
         <div className="max-w-2xl">
           <p className="text-sm text-ink-soft">Nossos planos</p>
@@ -130,7 +121,16 @@ export default function HomePage() {
         </p>
       </Reveal>
 
-      <Reveal id="clientes" className="border-y border-line bg-paper py-20 md:py-28">
+      <Reveal id="sobre" className="border-y border-line bg-paper">
+        <div className="mx-auto max-w-6xl px-5 py-20 md:py-28">
+          <FeatureSwitch />
+          <Link href="/a-formalizou" className="mt-8 inline-flex text-sm font-medium underline">
+            Conheça a história e a equipe
+          </Link>
+        </div>
+      </Reveal>
+
+      <Reveal id="clientes" className="border-b border-line bg-paper py-20 md:py-28">
         <div className="mx-auto max-w-6xl px-5">
           <p className="text-sm text-ink-soft">Clientes</p>
           <h2 className="mt-3 max-w-2xl font-display text-4xl tracking-tight md:text-5xl">
